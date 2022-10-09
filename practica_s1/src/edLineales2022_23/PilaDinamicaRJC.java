@@ -1,6 +1,16 @@
 package edLineales2022_23;
 
 public abstract class PilaDinamicaRJC<R> implements Pila<R> {
+	
+	private NodoRJC primero;
+	
+	public PilaDinamicaRJC () {
+		primero=null;
+		/**
+		Almacenamos el primer elemento de la pila
+		NOTA: Usamos el constructor para asegurarnos que primero se refiere a null. En Java no haría falta
+		*/
+	}
 
 	@Override
 	public void push(R element) {
