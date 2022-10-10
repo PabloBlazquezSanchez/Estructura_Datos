@@ -4,28 +4,40 @@ package edLineales2022_23;
 		private int array[];
 	    private int top;
 	    private int capacidad;
-		@Override
-		public void push(Object element) {
-			// TODO Auto-generated method stub
-			
+		
+		public Object push(int numero) {
+			 if (size() == capacidad)
+		        {   System.out.println("Overflow\nPrograma Terminado\n");
+		            System.exit(-1);
+		        }
+		 
+		        System.out.println("Insertando " + numero);
+		        return array[++top] = numero;
+		    }
+		
+
+		public Object pop() throws EmptyStackExceptionRJC {
+			if (isEmpty())
+	        {   System.out.println("Underflow\nProgram Terminado");
+	            System.exit(-1);
+	        }
+	        System.out.println("Eliminando elemento" +top());
+	       // decrease stack size by 1 and (optionally) return the popped element
+	        return array[top--];
 		}
 
-		@Override
-		public Object pop() throws PilaVaciaExcepcion {
-			// TODO Auto-generated method stub
-			return null;
+		public Object top() throws EmptyStackExceptionRJC {
+			if (!isEmpty()) {
+	            return array[top];
+	        }
+	        else {
+	            System.exit(-1);
+	        }
+				return -1;
 		}
 
-		@Override
-		public Object top() throws PilaVaciaExcepcion {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
 		public boolean isEmpty() {
-			// TODO Auto-generated method stub
-			return false;
+			return size() == 0;
 		}
 
 		public int size() {
