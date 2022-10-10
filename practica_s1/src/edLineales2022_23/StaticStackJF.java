@@ -21,16 +21,16 @@ public class StaticStackJF implements StackJF<Object> {
 			this.capacidad = this.capacidad * 2;
 		}
 
-		System.out.println("Insertando " + numero);
+		System.out.println("Insertando elemento: " + numero);
 		return array[++top] = numero;
 	}
 
 	public Object pop() throws EmptyStackExceptionRJC {
 		if (isEmpty()) {
-			System.out.println("Underflow\nProgram Terminado");
+			System.out.println("Underflow\nPrograma Terminado");
 			System.exit(-1);
 		}
-		System.out.println("Eliminando elemento " + top());
+		System.out.println("Eliminando elemento: " + top());
 		// decrease stack size by 1 and (optionally) return the popped element
 		return array[top--];
 	}
