@@ -41,8 +41,8 @@ package edLineales2022_23;
 		}
 
 		public int size() {
-			int tamaño=top+1;
-			return tamaño;
+			int tamano=top+1;
+			return tamano;
 		}
 
 }
