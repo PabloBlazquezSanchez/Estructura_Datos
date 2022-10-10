@@ -4,11 +4,21 @@ package edLineales2022_23;
 		private int array[];
 	    private int top;
 	    private int capacidad;
-		
+	    
+	    public StaticStackJF (int capacidad) {
+	        this.capacidad = capacidad;
+	        this.array = new int[capacidad];
+	        this.top = -1;
+	    }
+	    
 		public Object push(int numero) {
 			 if (size() == capacidad)
-		        {   System.out.println("Overflow\nPrograma Terminado\n");
-		            System.exit(-1);
+		        {int[] newStack = new int[this.capacidad*2];
+		        for(int i=0;i<capacidad;i++){
+		            newStack[i] = this.array[i];
+		        }
+		        this.array = newStack;
+		        this.capacidad = this.capacidad*2;
 		        }
 		 
 		        System.out.println("Insertando " + numero);
@@ -21,7 +31,7 @@ package edLineales2022_23;
 	        {   System.out.println("Underflow\nProgram Terminado");
 	            System.exit(-1);
 	        }
-	        System.out.println("Eliminando elemento" +top());
+	        System.out.println("Eliminando elemento " +top());
 	       // decrease stack size by 1 and (optionally) return the popped element
 	        return array[top--];
 		}
