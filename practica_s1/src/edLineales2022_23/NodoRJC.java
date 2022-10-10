@@ -1,16 +1,14 @@
 package edLineales2022_23;
 
 public class NodoRJC <R> {
-	NodoRJC siguiente; //Siguiente elemento de la pila dinámica
+	NodoRJC <R> siguiente; //Siguiente elemento de la pila dinámica
 	R element;
 	
-	
-	public NodoRJC(R element ,NodoRJC top) {
-		super();
-		siguiente = top;
+	//CONSTRUCTOR
+	public NodoRJC(R element ,NodoRJC<R> nodo) {
+		nodo = siguiente;
 		this.element = element;
 	}
-	
 	//METODOS DE CONSULTA Y ACTUALIZACIÓN
 	public NodoRJC getSiguiente() {
 		return siguiente;

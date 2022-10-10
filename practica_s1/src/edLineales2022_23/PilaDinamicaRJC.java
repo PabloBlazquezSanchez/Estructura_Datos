@@ -31,7 +31,7 @@ public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 		}
 		*/
 		
-		NodoRJC aux = new NodoRJC (element,nodo);
+		NodoRJC aux = new NodoRJC (element,siguiente);
 	}
 
 	@Override
