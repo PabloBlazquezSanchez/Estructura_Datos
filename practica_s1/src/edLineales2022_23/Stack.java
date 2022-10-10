@@ -7,7 +7,7 @@ public interface Stack <J> {
 		   * @param e the element to be inserted
 		   */
 		public J push(int numero);
-		
+		//public void push(J element);
 		/**
 		   * Removes and returns the top element from the stack.
 		   * @return element removed (or null if empty)
