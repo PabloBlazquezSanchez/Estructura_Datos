@@ -19,11 +19,11 @@ public abstract class PilaEstaticaRJC<R> implements Pila<R>{
 		end_Algorithm
 		 * */
 		if(t==N-1) {
+			throw new EmptyStackExceptionRJC("\nStack Overflow.");
 			/**
 		Trying to push a new element into a full stack causes an implementation-specific exception (the use of the stack should not
 		depend on the implementation).
 			*/
-			throw new EmptyStackExceptionRJC("\nStack Overflow.");
 		}
 		else {
 			t++;

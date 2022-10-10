@@ -15,6 +15,28 @@ public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 	@Override
 	public void push(R element) {
 		/**
+		Algorithm push(element)
+			aux = new node with (element, top)
+			top = aux
+			size = size + 1
+			end_Algorithm
+		 * */
+		
+		/*
+		NodoRJC elemento = new NodoRJC (element);
+		if(primero==null) primero=elemento;
+		else {
+			NodoRJC aux; //no local al siguiente bucle
+			for (aux=primero;aux.getSiguiente()!=null;aux=aux.getSiguiente()) { aux.setSiguiente(elemento); }
+		}
+		*/
+		
+		NodoRJC aux = new NodoRJC (element,nodo);
+	}
+
+	@Override
+	public R pop() throws EmptyStackExceptionRJC {
+		/**
 		Algorithm pop()
 		if isEmpty() then
 		  signal an error
@@ -27,17 +49,7 @@ public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 		end_Algorithm
 		 * */
 		
-	}
-
-	@Override
-	public R pop() throws EmptyStackExceptionRJC {
-		/**
-		Algorithm push(element)
-			aux = new node with (element, top)
-			top = aux
-			size = size + 1
-			end_Algorithm
-		 * */
+		for(NodoRJC aux=primero; aux!=null; aux=aux.getSiguiente()) { System.out.println(aux.getElement());}
 		return null;
 	}
 

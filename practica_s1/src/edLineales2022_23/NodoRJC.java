@@ -4,6 +4,13 @@ public class NodoRJC <R> {
 	NodoRJC siguiente; //Siguiente elemento de la pila dinámica
 	R element;
 	
+	
+	public NodoRJC(R element ,NodoRJC top) {
+		super();
+		siguiente = top;
+		this.element = element;
+	}
+	
 	//METODOS DE CONSULTA Y ACTUALIZACIÓN
 	public NodoRJC getSiguiente() {
 		return siguiente;
@@ -17,6 +24,4 @@ public class NodoRJC <R> {
 	public void setElement(R element) {
 		this.element = element;
 	}
-	
-	
 }
