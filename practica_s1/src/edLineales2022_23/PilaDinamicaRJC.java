@@ -2,11 +2,16 @@ package edLineales2022_23;
 
 public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 	
-	private NodoRJC primero;
+	private NodoRJC<R> primero /* = null*/; //top
+	private int longitud = 0; //size
+	
+	/*Estos dos atributos serviran para todo y lo unico que necesitamos*/
 	
 	public PilaDinamicaRJC () {
 		primero=null;
+		
 		/**
+		CONSTRUCTOR - Crear el objeto
 		Almacenamos el primer elemento de la pila
 		NOTA: Usamos el constructor para asegurarnos que primero se refiere a null. En Java no haría falta
 		*/
@@ -20,18 +25,10 @@ public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 			top = aux
 			size = size + 1
 			end_Algorithm
-		 * */
-		
-		/*
-		NodoRJC elemento = new NodoRJC (element);
-		if(primero==null) primero=elemento;
-		else {
-			NodoRJC aux; //no local al siguiente bucle
-			for (aux=primero;aux.getSiguiente()!=null;aux=aux.getSiguiente()) { aux.setSiguiente(elemento); }
-		}
 		*/
-		
-		NodoRJC aux = new NodoRJC (element,siguiente);
+		NodoRJC<R> aux = new NodoRJC<R> (element,primero);
+		primero = aux; //Refrescamos el primero o top
+		longitud++;
 	}
 
 	@Override
@@ -47,10 +44,16 @@ public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 		end_if
 		return element
 		end_Algorithm
-		 * */
+		*/
 		
-		for(NodoRJC aux=primero; aux!=null; aux=aux.getSiguiente()) { System.out.println(aux.getElement());}
-		return null;
+		R element;
+		if(isEmpty() /*|| primero == null*/) throw new EmptyStackExceptionRJC("\nThe stack is actually empty.");
+		else {
+			element = primero.getElement();
+			primero = primero.getNext();
+			longitud--;
+		}
+		return element;
 	}
 
 	@Override
@@ -63,8 +66,12 @@ public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 			  return the element of top
 			 end_if
 			end_Algorithm
-		 * */
-		return null;
+		*/
+		
+		if(isEmpty()) throw new EmptyStackExceptionRJC("\nThe stack is actually empty.");
+		else {
+			return primero.getElement();
+		}
 	}
 
 	@Override
@@ -74,7 +81,7 @@ public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 			return top = null
 		  end_Algorithm
 		 * */
-		return false;
+		return primero == null;
 	}
 
 	@Override
@@ -84,7 +91,7 @@ public abstract class PilaDinamicaRJC<R> implements Pila<R> {
 			return size
 		  end_Algorithm
 		 * */
-		return 0;
+		return longitud;
 	}
 	
 }
