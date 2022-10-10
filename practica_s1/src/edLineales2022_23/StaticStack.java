@@ -24,25 +24,28 @@ public class StaticStack<R> implements Pila<R>{
 
 	@Override
 	public R pop() throws EmptyStackExceptionRJC {
-		// TODO Auto-generated method stub
-		return null;
+		R element;
+		if(isEmpty()) throw new EmptyStackExceptionRJC("\nThe stack is empty.");
+		else {
+			element = S[cima];
+			cima--;
+		}
+		return element;
 	}
 
 	@Override
 	public R top() throws EmptyStackExceptionRJC {
-		// TODO Auto-generated method stub
-		return null;
+		if(isEmpty()) throw new EmptyStackExceptionRJC("\nThe stack is empty.");
+		else return S[cima];
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return size() == 0;
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return cima+1;
 	}
 }
