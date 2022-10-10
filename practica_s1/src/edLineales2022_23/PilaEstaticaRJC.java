@@ -1,6 +1,6 @@
 package edLineales2022_23;
 
-public abstract class PilaEstaticaRJC<R> implements Pila<R>{
+public class PilaEstaticaRJC<R> implements Pila<R>{
 	/* https://www.geeksforgeeks.org/generic-class-hierarchies-in-java/ */
 	
 	int t = -1, N=0; //N must be defined a priori and cannot be changed

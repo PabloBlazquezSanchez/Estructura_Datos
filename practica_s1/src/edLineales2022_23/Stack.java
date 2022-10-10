@@ -1,6 +1,6 @@
 package edLineales2022_23;
 
-public interface StackJF <J> {
+public interface Stack <J> {
 	
 	     	/**
 		   * Inserts an element at the top of the stack.

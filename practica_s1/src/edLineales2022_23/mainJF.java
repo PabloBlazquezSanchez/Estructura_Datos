@@ -4,7 +4,7 @@ public class mainJF {
 
 	    public static void main (String[] args)
 	    {
-	        StackJF stack = new StaticStackJF(2);
+	        Stack stack = new StaticStackJF(2);
 	 
 	        stack.push(1);      // inserting 1 in the stack
 	        stack.push(2);      // inserting 2 in the stack

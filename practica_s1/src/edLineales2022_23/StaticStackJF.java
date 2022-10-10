@@ -1,6 +1,6 @@
 package edLineales2022_23;
 
-public class StaticStackJF implements StackJF<Object> {
+public class StaticStackJF implements Stack<Object> {
 	private int array[];
 	private int top;
 	private int capacidad;
