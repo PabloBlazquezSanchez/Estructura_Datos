@@ -6,20 +6,20 @@ public class StaticStack<R> implements Pila<R>{
 	
 	
 
-	public StaticStack(int longitud, R[] S) {
+	public StaticStack(int longitud) {
 		this.longitud = longitud;
 		this.cima = -1;
-		this.S = S;
 	}
 
 	@Override
 	public void push(R element) {
-		if(size()==longitud) { /*|| cima == longitud - 1*/ throw new EmptyStackExceptionRJC("\nStack Overflow."); }
-		else {
-			cima++;
-			S[cima]=element;
-			//tal vez S[++cima]=element;?
+		if(size()==longitud) {
+			R[] newStack = (R[]) new Object[this.longitud * 2];
+			for (int i = 0; i < longitud; i++) {newStack[i] = this.S[i];}
+			this.S = newStack;
+			this.longitud *= 2;
 		}
+		//S[++cima]=element;
 	}
 
 	@Override

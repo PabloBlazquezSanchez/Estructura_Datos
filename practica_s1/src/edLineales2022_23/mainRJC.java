@@ -1,6 +1,6 @@
 package edLineales2022_23;
 
-public class mainRJC {
+public class mainRJC<Integer> {
 	
 	public static void main (String[] args) {
 		
