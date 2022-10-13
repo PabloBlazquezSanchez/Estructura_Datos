@@ -17,16 +17,16 @@ public class mainRJC{
         stack.push(5);// inserting 3 in the stack
  
         System.out.println("El elemento top es " + stack.top());
-        System.out.println("El tamaño de la pila es " + stack.size());
+        System.out.println("La longitud de la pila es " + stack.size());
  
         stack.pop();        // removing the top element (3)
  
         // check if the stack is empty
         if (stack.isEmpty()) {
-            System.out.println("La pila está vacia");
+            System.out.println("La pila esta vacia");
         }
         else {
-            System.out.println("La pila no está vacia");
+            System.out.println("La pila no esta vacia");
         }
         System.out.println("El elemento top es " + stack.top());
     }
