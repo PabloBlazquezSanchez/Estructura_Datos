@@ -1,25 +1,28 @@
 package edLineales2022_23;
 
-public class StaticStack<R> implements Pila<R>{
+public class StaticStack<R extends Object> implements Pila<R>{
 	private int longitud, cima;
-	private R[] S = (R[]) new Object[longitud]; //usamos molde Object (limitacion java)
+	private R[] S; //usamos molde Object (limitacion java)
+	//private R [] S;
 	
 	
 
 	public StaticStack(int longitud) {
 		this.longitud = longitud;
 		this.cima = -1;
+		S = (R[]) new Object[longitud];
 	}
 
 	@Override
 	public void push(R element) {
 		if(size()==longitud) {
-			R[] newStack = (R[]) new Object[this.longitud * 2];
-			for (int i = 0; i < longitud; i++) {newStack[i] = this.S[i];}
-			this.S = newStack;
+			//throw new StackOverflowExceptionRJC("Stack Overflow.");
+			R[] nS = (R[]) new Object[this.longitud * 2];
+			for (int i = 0; i < longitud; i++) {nS[i] = this.S[i];}
+			this.S = nS;
 			this.longitud *= 2;
 		}
-		//S[++cima]=element;
+		S[++cima]=element;
 	}
 
 	@Override

@@ -1,10 +1,10 @@
 package edLineales2022_23;
 
-public class mainRJC<Integer> {
+public class mainRJC{
 	
 	public static void main (String[] args) {
 		
-        Pila stack = new StaticStack(2);
+		StaticStack <Integer> stack = new StaticStack <Integer> (2);
  
         stack.push(1);      // inserting 1 in the stack
         stack.push(2);      // inserting 2 in the stack
