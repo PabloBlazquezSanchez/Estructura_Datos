@@ -37,7 +37,7 @@ public class StaticStack<R extends Object> implements Pila<R> {
 	
 	public R top() throws EmptyStackExceptionRJC {
 		if (isEmpty())
-			throw new EmptyStackExceptionRJC("\nThe stack is empty.");
+			throw new EmptyStackExceptionRJC("\nLa pila está vacía.");
 		else
 			return S[cima];
 	}
