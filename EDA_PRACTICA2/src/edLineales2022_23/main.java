@@ -23,12 +23,13 @@ public class main{
 			case 3:
 				break;
 			case 4:
+				System.out.println("Programa finalizado.");
 				break;
 			default:
 				System.out.println("Error. Vuelva a escribir la opción otra vez.\n");
 				break;
 			}
-		} while (opcion != 8);
+		} while (opcion != 4);
 
 	}
 	
