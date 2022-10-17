@@ -1,9 +1,10 @@
 package edLineales2022_23;
 
-public class Ejemplo1 {
+public class Ejemplo1_variante {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		Stack<Integer> pila = new StaticStack<Integer>(6);
 		
 		System.out.println("Pila Estática: ");
@@ -14,9 +15,7 @@ public class Ejemplo1 {
 		pila.push(28);
 		pila.push(33);
 		
-		for(int i = pila.size(); i > 0; i--) {
-			System.out.print(pila.pop() + " ");
-		}
+		escribir(pila);
 		
 		pila = new PilaDinamicaRJC<Integer>();
 		System.out.println("\nPila Dinámica: ");
@@ -28,9 +27,12 @@ public class Ejemplo1 {
 		pila.push(28);
 		pila.push(33);
 		
-		for(int i = pila.size(); i > 0; i--) {
-			System.out.print(pila.pop() + " ");
+		escribir(pila);
+	}
+	
+	public static void escribir (Stack<Integer> p) {
+		for(int i = p.size(); i > 0; i--) {
+			System.out.print(p.pop() + " ");
 		}
-
 	}
 }
