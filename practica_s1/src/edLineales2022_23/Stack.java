@@ -1,38 +1,66 @@
 package edLineales2022_23;
 
-public interface Stack <J> {
-	
-	     	/**
-		   * Inserts an element at the top of the stack.
-		   * @param e the element to be inserted
-		   */
-		public J push(int numero);
-		//public void push(J element);
-		/**
-		   * Removes and returns the top element from the stack.
-		   * @return element removed (or null if empty)
-		   */
-		
-		public J pop() throws EmptyStackExceptionRJC;
-		
-		/**
-		   * Returns, but does not remove, the element at the top of the stack.
-		   * @return top element in the stack (or null if empty)
-		   */
-		public J top() throws EmptyStackExceptionRJC;
-		
-		/**
-		   * Tests whether the stack is empty.
-		   * @return true if the stack is empty, false otherwise
-		   */
-		public boolean isEmpty();
-		/**
-		   * Returns the number of elements in the stack.
-		   * @return number of elements in the stack
-		   */
-		public int size();
-		
+public interface Stack<T> {
 
+	/**
+	 * Este método inserta un elemento en la parte superior de la pila.
+	 * 
+	 * @param element Es el elemento que se debe de insertar.
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @date Octubre 10, 2022
+	 * @version 1.0
+	 */
 
-		}
+	public void push(T element);
 
+	/**
+	 * Este método elimina y devuelve el elemento que se encuentre en la parte
+	 * superior de la pila.
+	 * 
+	 * @return elemento eliminado (o nada si está vacía la pila)
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @date Octubre 10, 2022
+	 * @version 1.0
+	 */
+
+	public T pop() throws EmptyStackExceptionRJC;
+
+	/**
+	 * Este método devuelve, pero no elimina, el elemento que se encuentre en la
+	 * parte superior de la pila.
+	 * 
+	 * @return elemento superior de la pila (o nada si está vacía la pila)
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @date Octubre 10, 2022
+	 * @version 1.0
+	 */
+
+	public T top() throws EmptyStackExceptionRJC;
+
+	/**
+	 * Comprueba si la pila está vacía.
+	 * 
+	 * @return true si la pila está vacía, false en caso contrario
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @date Octubre 10, 2022
+	 * @version 1.0
+	 */
+
+	public boolean isEmpty();
+
+	/**
+	 * Devuelve el número de elementos en la pila.
+	 * 
+	 * @return el número de elementos de la pila
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @date Octubre 10, 2022
+	 * @version 1.0
+	 */
+	public int size();
+
+}
