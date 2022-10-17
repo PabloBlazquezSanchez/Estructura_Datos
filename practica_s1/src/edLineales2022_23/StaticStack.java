@@ -1,6 +1,6 @@
 package edLineales2022_23;
 
-public class StaticStack<R extends Object> implements Stack<R> {
+public class StaticStack<R> implements Stack<R> {
 	private int longitud, cima;
 	private R[] S;
 
