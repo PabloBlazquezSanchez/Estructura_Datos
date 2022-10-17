@@ -7,7 +7,7 @@ public class Ejemplo1_variante {
 		
 		Stack<Integer> pila = new StaticStack<Integer>(6);
 		
-		System.out.println("Pila Estática: ");
+		System.out.println("Pila Estï¿½tica: ");
 		pila.push(3);
 		pila.push(67);
 		pila.push(45);
@@ -17,8 +17,8 @@ public class Ejemplo1_variante {
 		
 		escribir(pila);
 		
-		pila = new PilaDinamicaRJC<Integer>();
-		System.out.println("\nPila Dinámica: ");
+		pila = new DynamicStack<Integer>();
+		System.out.println("\nPila Dinï¿½mica: ");
 		
 		pila.push(3);
 		pila.push(67);

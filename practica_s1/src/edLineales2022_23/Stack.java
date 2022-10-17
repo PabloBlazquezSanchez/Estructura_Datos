@@ -25,7 +25,7 @@ public interface Stack<T> {
 	 * @version 1.0
 	 */
 
-	public T pop() throws EmptyStackExceptionRJC;
+	public T pop() throws EmptyStackException;
 
 	/**
 	 * Este método devuelve, pero no elimina, el elemento que se encuentre en la
@@ -38,7 +38,7 @@ public interface Stack<T> {
 	 * @version 1.0
 	 */
 
-	public T top() throws EmptyStackExceptionRJC;
+	public T top() throws EmptyStackException;
 
 	/**
 	 * Comprueba si la pila está vacía.

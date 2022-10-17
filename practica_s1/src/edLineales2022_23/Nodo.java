@@ -1,12 +1,12 @@
 package edLineales2022_23;
 
-public class NodoRJC<R> {
+public class Nodo<R> {
 
 	private R element;	
-	private NodoRJC<R> next; //Siguiente elemento de la pila dinámica
+	private Nodo<R> next; //Siguiente elemento de la pila dinï¿½mica
 	
 	//CONSTRUCTOR
-	public NodoRJC(R element, NodoRJC<R> next) {
+	public Nodo(R element, Nodo<R> next) {
 		this.element = element;
 		this.next = next;
 	}
@@ -16,7 +16,7 @@ public class NodoRJC<R> {
 		return element;
 	}
 
-	public NodoRJC<R> getNext() {
+	public Nodo<R> getNext() {
 		return next;
 	}
 
@@ -24,7 +24,7 @@ public class NodoRJC<R> {
 		this.element = element;
 	}
 
-	public void setNext(NodoRJC<R> next) {
+	public void setNext(Nodo<R> next) {
 		this.next = next;
 	}
 	

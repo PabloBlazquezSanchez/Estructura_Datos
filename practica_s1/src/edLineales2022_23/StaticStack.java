@@ -24,10 +24,10 @@ public class StaticStack<R> implements Stack<R> {
 	}
 
 	
-	public R pop() throws EmptyStackExceptionRJC {
+	public R pop() throws EmptyStackException {
 		R element;
 		if (isEmpty())
-			throw new EmptyStackExceptionRJC("\n La pila está vacía.");
+			throw new EmptyStackException("\n La pila está vacía.");
 		else {
 			element = S[cima--];
 		}
@@ -35,9 +35,9 @@ public class StaticStack<R> implements Stack<R> {
 	}
 
 	
-	public R top() throws EmptyStackExceptionRJC {
+	public R top() throws EmptyStackException {
 		if (isEmpty())
-			throw new EmptyStackExceptionRJC("\nLa pila está vacía.");
+			throw new EmptyStackException("\nLa pila está vacía.");
 		else
 			return S[cima];
 	}
