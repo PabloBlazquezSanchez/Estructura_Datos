@@ -1,6 +1,6 @@
 package edLineales2022_23;
 
-public class PilaDinamicaRJC<R> implements Pila<R> {
+public class PilaDinamicaRJC<R> implements Stack<R> {
 	
 	private NodoRJC<R> primero /* = null*/; //top
 	private int longitud = 0; //size
