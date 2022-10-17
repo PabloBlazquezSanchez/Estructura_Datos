@@ -1,6 +1,6 @@
 package edLineales2022_23;
 
-public class Ejemplo1_variantissima{
+public class Ejemplo1_Variante{
 
 	// TODO Auto-generated method stub
 	public static void main(String[] args) {

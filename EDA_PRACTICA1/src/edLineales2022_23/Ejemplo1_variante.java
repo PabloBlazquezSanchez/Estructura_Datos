@@ -1,38 +1,31 @@
 package edLineales2022_23;
 
-public class Ejemplo1_variante {
+public class Ejemplo1_Variante{
 
+	// TODO Auto-generated method stub
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		Stack<Integer> pila = new StaticStack<Integer>(6);
-		
-		System.out.println("Pila Est�tica: ");
-		pila.push(3);
-		pila.push(67);
-		pila.push(45);
-		pila.push(9);
-		pila.push(28);
-		pila.push(33);
-		
-		escribir(pila);
-		
-		pila = new DynamicStack<Integer>();
-		System.out.println("\nPila Din�mica: ");
-		
-		pila.push(3);
-		pila.push(67);
-		pila.push(45);
-		pila.push(9);
-		pila.push(28);
-		pila.push(33);
-		
-		escribir(pila);
+			Stack<Integer> pila = new StaticStack<Integer>(6);
+			pushes(pila);
+			System.out.println("Pila Est�tica: ");
+			escribir(pila);
+			
+			pila = new DynamicStack<Integer>();
+			pushes(pila);
+			System.out.println("\nPila Din�mica: ");
+			escribir(pila);
 	}
-	
+		
 	public static void escribir (Stack<Integer> p) {
 		for(int i = p.size(); i > 0; i--) {
 			System.out.print(p.pop() + " ");
+		}
+	}
+	
+	public static void pushes (Stack<Integer> q) {
+		int[] enteros = {3, 67, 45, 9, 28, 33};
+		for(int i=0;i<enteros.length;i++) {
+			q.push(enteros[i]);
 		}
 	}
 }
