@@ -1,6 +1,6 @@
 package edLineales2022_23;
 
-public class Ejemplo1_Variante{
+public class Ejemplo1_variante{
 
 	/**
 	 * The main method.
