@@ -4,70 +4,65 @@ package edLineales2022_23;
 /**
  * La interfaz de la pila.
  *
- * @param <T> de tipo gen√©rico
+ * @param <T> de tipo genÈrico
  */
 public interface Stack<T> {
 
 	/**
-	 * Este m√©todo inserta un elemento en la parte superior de la pila.
+	 * Este mÈtodo inserta un elemento en la parte superior de la pila.
 	 *
-	 * @author Pablo Bl√°zquez S√°nchez, Jes√∫s Fern√°ndez L√≥pez, Ra√∫l Jimenez de la
+	 * @author Pablo Bl·zquez S·nchez, Jes˙s Fern·ndez LÛpez, Ra˙l Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
 	 * @param element Es el elemento que se debe de insertar.
-	 * @date Octubre 10, 2022
 	 */
 
 	public void push(T element);
 
 	/**
-	 * Este m√©todo elimina y devuelve el elemento que se encuentre en la parte
+	 * Este mÈtodo elimina y devuelve el elemento que se encuentre en la parte
 	 * superior de la pila.
 	 *
-	 * @author Pablo Bl√°zquez S√°nchez, Jes√∫s Fern√°ndez L√≥pez, Ra√∫l Jimenez de la
+	 * @author Pablo Bl·zquez S·nchez, Jes˙s Fern·ndez LÛpez, Ra˙l Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
 	 * @return elemento eliminado (o nada si est√° vac√≠a la pila)
 	 * @throws EmptyStackException the empty stack exception
-	 * @date Octubre 10, 2022
 	 */
 
 	public T pop() throws EmptyStackException;
 
 	/**
-	 * Este m√©todo devuelve, pero no elimina, el elemento que se encuentre en la
+	 * Este mÈtodo devuelve, pero no elimina, el elemento que se encuentre en la
 	 * parte superior de la pila.
 	 *
-	 * @author Pablo Bl√°zquez S√°nchez, Jes√∫s Fern√°ndez L√≥pez, Ra√∫l Jimenez de la
+	 * @author Pablo Bl·zquez S·nchez, Jes˙s Fern·ndez LÛpez, Ra˙l Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * @return elemento superior de la pila (o nada si est√° vac√≠a la pila)
+	 * @return elemento superior de la pila (o nada si est· vacÌa la pila)
 	 * @throws EmptyStackException the empty stack exception
-	 * @date Octubre 10, 2022
 	 */
 
 	public T top() throws EmptyStackException;
 
 	/**
-	 * Comprueba si la pila est√° vac√≠a.
+	 * Comprueba si la pila est· vacÌa.
 	 *
-	 * @author Pablo Bl√°zquez S√°nchez, Jes√∫s Fern√°ndez L√≥pez, Ra√∫l Jimenez de la
+	 * @author Pablo Bl·zquez S·nchez, Jes˙s Fern·ndez LÛpez, Ra˙l Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * @return true si la pila est√° vac√≠a, false en caso contrario
-	 * @date Octubre 10, 2022
+	 * @return true si la pila est· vacÌa, false en caso contrario
 	 */
 
 	public boolean isEmpty();
 
 	/**
-	 * Devuelve el n√∫mero de elementos en la pila.
+	 * Devuelve el n˙mero de elementos en la pila.
 	 *
-	 * @author Pablo Bl√°zquez S√°nchez, Jes√∫s Fern√°ndez L√≥pez, Ra√∫l Jimenez de la
+	 * @author Pablo Bl·zquez S·nchez, Jes˙s Fern·ndez LÛpez, Ra˙l Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * @return el n√∫mero de elementos de la pila
-	 * @date Octubre 10, 2022
+	 * @return el n˙mero de elementos de la pila
 	 */
 	public int size();
 

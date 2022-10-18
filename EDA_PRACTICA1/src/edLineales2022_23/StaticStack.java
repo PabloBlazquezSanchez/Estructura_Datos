@@ -64,11 +64,10 @@ public class StaticStack<R> implements Stack<R> {
 	 * cima una unidad debido a que la posici√≥n de un elemento dentro de un array
 	 * comienza a partir del 0 y no del 1.
 	 *
-	 * @author Pablo Bl√°zquez S√°nchez, Jes√∫s Fern√°ndez L√≥pez, Ra√∫l Jimenez de la
+	 * @author Pablo Bl·zquez S·nchez, Jes˙s Fern·ndez LÛpez, Ra˙l Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
 	 * @return el n√∫mero de elementos de la pila.
-	 * @date Octubre 10, 2022
 	 */
 
 	public int size() {
@@ -80,11 +79,10 @@ public class StaticStack<R> implements Stack<R> {
 	 * m√©todo le devuelva 0, significa que la pila est√° vac√≠a ya que no habr√° ning√∫n
 	 * elemento en ella. En caso contrario, significar√° que tiene alg√∫n elemento.
 	 *
-	 * @author Pablo Bl√°zquez S√°nchez, Jes√∫s Fern√°ndez L√≥pez, Ra√∫l Jimenez de la
+	 * @author Pablo Bl·zquez S·nchez, Jes˙s Fern·ndez LÛpez, Ra˙l Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
 	 * @return true si la pila est√° vac√≠a, false en caso contrario
-	 * @date Octubre 10, 2022
 	 */
 
 	public boolean isEmpty() {
@@ -96,12 +94,11 @@ public class StaticStack<R> implements Stack<R> {
 	 * parte superior de la pila. Para ello, accede a la posici√≥n del array donde se
 	 * encuentre el ultimo elemento a trav√©s de la variable cima.
 	 *
-	 * @author Pablo Bl√°zquez S√°nchez, Jes√∫s Fern√°ndez L√≥pez, Ra√∫l Jimenez de la
+	 * @author Pablo Bl·zquez S·nchez, Jes˙s Fern·ndez LÛpez, Ra˙l Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
 	 * @return elemento superior de la pila (o nada si est√° vac√≠a la pila)
 	 * @throws EmptyStackException the empty stack exception
-	 * @date Octubre 10, 2022
 	 */
 
 	public R top() throws EmptyStackException {

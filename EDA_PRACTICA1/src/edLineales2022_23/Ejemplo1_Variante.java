@@ -12,12 +12,12 @@ public class Ejemplo1_Variante{
 		
 			Stack<Integer> pila = new StaticStack<Integer>(6);
 			pushes(pila);
-			System.out.println("Pila Estï¿½tica: ");
+			System.out.println("Pila Estática: ");
 			escribir(pila);
 			
 			pila = new DynamicStack<Integer>();
 			pushes(pila);
-			System.out.println("\nPila Dinï¿½mica: ");
+			System.out.println("\nPila Dinámica: ");
 			escribir(pila);
 	}
 		
