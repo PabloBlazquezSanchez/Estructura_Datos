@@ -2,6 +2,11 @@ package edLineales2022_23;
 
 public class Ejemplo1_Variante{
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	// TODO Auto-generated method stub
 	public static void main(String[] args) {
 		
@@ -16,12 +21,22 @@ public class Ejemplo1_Variante{
 			escribir(pila);
 	}
 		
+	/**
+	 * Escribir.
+	 *
+	 * @param p the p
+	 */
 	public static void escribir (Stack<Integer> p) {
 		for(int i = p.size(); i > 0; i--) {
 			System.out.print(p.pop() + " ");
 		}
 	}
 	
+	/**
+	 * Pushes.
+	 *
+	 * @param q the q
+	 */
 	public static void pushes (Stack<Integer> q) {
 		int[] enteros = {3, 67, 45, 9, 28, 33};
 		for(int i=0;i<enteros.length;i++) {
