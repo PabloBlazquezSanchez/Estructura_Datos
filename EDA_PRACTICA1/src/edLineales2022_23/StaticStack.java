@@ -52,7 +52,7 @@ public class StaticStack<R> implements Stack<R> {
 	public R pop() throws EmptyStackException {
 		R element;
 		if (isEmpty())
-			throw new EmptyStackException("\n La pila estÃ¡ vacÃ­a.");
+			throw new EmptyStackException("\n La pila está vacía.");
 		else {
 			element = S[cima--];
 		}
@@ -60,14 +60,14 @@ public class StaticStack<R> implements Stack<R> {
 	}
 
 	/**
-	 * Devuelve el nÃºmero de elementos en la pila, para ello se suma al elemento
-	 * cima una unidad debido a que la posiciÃ³n de un elemento dentro de un array
+	 * Devuelve el número de elementos en la pila, para ello se suma al elemento
+	 * cima una unidad debido a que la posición de un elemento dentro de un array
 	 * comienza a partir del 0 y no del 1.
 	 *
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * @return el nÃºmero de elementos de la pila.
+	 * @return el número de elementos de la pila.
 	 */
 
 	public int size() {
@@ -75,14 +75,14 @@ public class StaticStack<R> implements Stack<R> {
 	}
 
 	/**
-	 * Comprueba si la pila estÃ¡ vacÃ­a, para ello utiliza el mÃ©todo size(). Si este
-	 * mÃ©todo le devuelva 0, significa que la pila estÃ¡ vacÃ­a ya que no habrÃ¡ ningÃºn
-	 * elemento en ella. En caso contrario, significarÃ¡ que tiene algÃºn elemento.
+	 * Comprueba si la pila está vacía, para ello utiliza el método size(). Si este
+	 * método le devuelva 0, significa que la pila está vacía ya que no habrá ningún
+	 * elemento en ella. En caso contrario, significará que tiene algún elemento.
 	 *
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * @return true si la pila estÃ¡ vacÃ­a, false en caso contrario
+	 * @return true si la pila está vacía, false en caso contrario
 	 */
 
 	public boolean isEmpty() {
@@ -90,20 +90,20 @@ public class StaticStack<R> implements Stack<R> {
 	}
 
 	/**
-	 * Este mÃ©todo devuelve, pero no elimina, el elemento que se encuentre en la
-	 * parte superior de la pila. Para ello, accede a la posiciÃ³n del array donde se
-	 * encuentre el ultimo elemento a travÃ©s de la variable cima.
+	 * Este método devuelve, pero no elimina, el elemento que se encuentre en la
+	 * parte superior de la pila. Para ello, accede a la posición del array donde se
+	 * encuentre el ultimo elemento a través de la variable cima.
 	 *
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * @return elemento superior de la pila (o nada si estÃ¡ vacÃ­a la pila)
+	 * @return elemento superior de la pila (o nada si está vacía la pila)
 	 * @throws EmptyStackException the empty stack exception
 	 */
 
 	public R top() throws EmptyStackException {
 		if (isEmpty())
-			throw new EmptyStackException("\nLa pila estÃ¡ vacÃ­a.");
+			throw new EmptyStackException("\nLa pila está vacía.");
 		else
 			return S[cima];
 	}
