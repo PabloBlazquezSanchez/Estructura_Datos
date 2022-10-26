@@ -4,6 +4,9 @@ public class Ejemplo1 {
 
 	/**
 	 * The main method.
+	 * En el método principal se van a crear las pilas estática y dinámica,
+	 * se insertarán los números a las mismas y, posteriormente se extraen
+	 * los números introducidos y se imprimen en pantalla.
 	 *
 	 * @param args the arguments
 	 */

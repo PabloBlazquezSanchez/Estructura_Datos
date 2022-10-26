@@ -4,6 +4,9 @@ public class Ejemplo1_variante{
 
 	/**
 	 * The main method.
+	 * En el método principal se van a crear las pilas estática y dinámica,
+	 * se insertarán los números a las mismas y, posteriormente se extraen
+	 * los números introducidos y se imprimen en pantalla.
 	 *
 	 * @param args the arguments
 	 */
@@ -23,6 +26,8 @@ public class Ejemplo1_variante{
 		
 	/**
 	 * Escribir.
+	 * Este método va a imprimir en pantalla los números de la pila
+	 * mientras los elimina de esta.
 	 *
 	 * @param p the p
 	 */
@@ -34,6 +39,9 @@ public class Ejemplo1_variante{
 	
 	/**
 	 * Pushes.
+	 * Este método va a introducir en la pila los números con ayuda de la llamada
+	 * al método push, que se encuentra en las clases StaticStack y DynamicStack y
+	 * en la interfaz Stack
 	 *
 	 * @param q the q
 	 */
