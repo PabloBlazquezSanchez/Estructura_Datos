@@ -4,12 +4,12 @@ public class Acciones {
 
 	private int precio;
 	private int nacciones;
-	private String mescompra;
+	private int ID;
 	
-	public Acciones(String mescompra,int precio,int nacciones){
+	public Acciones(int ID,int precio,int nacciones){
 		this.precio=precio;
 		this.nacciones=nacciones;
-		this.mescompra=mescompra;
+		this.ID=ID;
 	}
 
 	public int getPrecio() {
@@ -28,11 +28,13 @@ public class Acciones {
 		this.nacciones = nacciones;
 	}
 
-	public String getMescompra() {
-		return mescompra;
+	public int getID() {
+		return ID;
 	}
 
-	public void setMescompra(String mescompra) {
-		this.mescompra = mescompra;
+	public void setID(int iD) {
+		ID = iD;
 	}
+
+	
 }
