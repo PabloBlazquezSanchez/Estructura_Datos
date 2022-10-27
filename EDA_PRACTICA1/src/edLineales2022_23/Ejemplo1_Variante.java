@@ -3,14 +3,13 @@ package edLineales2022_23;
 public class Ejemplo1_variante{
 
 	/**
-	 * The main method.
+	 * 
 	 * En el método principal se van a crear las pilas estática y dinámica,
 	 * se insertarán los números a las mismas y, posteriormente se extraen
 	 * los números introducidos y se imprimen en pantalla.
 	 *
 	 * @param args the arguments
 	 */
-	// TODO Auto-generated method stub
 	public static void main(String[] args) {
 		
 			Stack<Integer> pila = new StaticStack<Integer>(6);
@@ -29,7 +28,7 @@ public class Ejemplo1_variante{
 	 * Este método va a imprimir en pantalla los números de la pila
 	 * mientras los elimina de esta.
 	 *
-	 * @param p the p
+	 * @param p es la pila
 	 */
 	public static void escribir (Stack<Integer> p) {
 		for(int i = p.size(); i > 0; i--) {
@@ -43,7 +42,7 @@ public class Ejemplo1_variante{
 	 * al método push, que se encuentra en las clases StaticStack y DynamicStack y
 	 * en la interfaz Stack
 	 *
-	 * @param q the q
+	 * @param q es la pila
 	 */
 	public static void pushes (Stack<Integer> q) {
 		int[] enteros = {3, 67, 45, 9, 28, 33};

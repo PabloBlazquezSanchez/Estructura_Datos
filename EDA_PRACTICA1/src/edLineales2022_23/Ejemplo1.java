@@ -3,7 +3,6 @@ package edLineales2022_23;
 public class Ejemplo1 {
 
 	/**
-	 * The main method.
 	 * En el método principal se van a crear las pilas estática y dinámica,
 	 * se insertarán los números a las mismas y, posteriormente se extraen
 	 * los números introducidos y se imprimen en pantalla.
@@ -11,10 +10,9 @@ public class Ejemplo1 {
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Stack<Integer> pila = new StaticStack<Integer>(6);
 
-		System.out.println("Pila Estï¿½tica: ");
+		System.out.println("Pila Estática: ");
 		pila.push(3);
 		pila.push(67);
 		pila.push(45);
@@ -27,7 +25,7 @@ public class Ejemplo1 {
 		}
 
 		pila = new DynamicStack<Integer>();
-		System.out.println("\nPila Dinï¿½mica: ");
+		System.out.println("\nPila Dinámica: ");
 
 		pila.push(3);
 		pila.push(67);
