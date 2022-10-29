@@ -1,23 +1,29 @@
 package edLineales2022_23;
 
 import java.util.InputMismatchException;
+import java.util.Queue;
 import java.util.Scanner;
+import java.util.concurrent.LinkedBlockingQueue;
+
 public class main{
+	static int ID = 0;
+	static Queue<Acciones> cartera = new LinkedBlockingQueue<Acciones>();
+
 	public static void main(String[] args)  {
-		
 	mostrarMenu();
 }
 	public static void mostrarMenu() {
 		int opcion = 0;
 		do {
-			System.out.println("MenÃº: \n" + "1. Comprar acciones\r\n"
+			System.out.println("Menú: \n" + "1. Comprar acciones\r\n"
 					+ "2. Vender acciones\r\n"
 					+ "3. Ganancia de capital hasta el momento\r\n"
 					+ "4. Salir\r\n"
-					+ "Escriba el nÃºmero de la opciÃ³n que desea realizar: ");
-			opcion = (int) filtrarEscritura();
+					+ "Escriba el número de la opción que desea realizar: ");
+			opcion = filtrarEscritura();
 			switch (opcion) {
 			case 1:
+				compraracciones();
 				break;
 			case 2:
 				break;
@@ -27,23 +33,33 @@ public class main{
 				System.out.println("Programa finalizado.");
 				break;
 			default:
-				System.out.println("Error. Vuelva a escribir la opciÃ³n otra vez.\n");
+				System.out.println("Error. Vuelva a escribir la opción otra vez.\n");
 				break;
 			}
 		} while (opcion != 4);
-
 	}
-	
-	
-	
-	//MÃ©todo que captura el dato introducido por teclado y comprueba si es un nÃºmero o un carÃ¡cter
-	public static long filtrarEscritura() {
-		long numero = 0;
+		
+	private static void compraracciones() {
+		int nacciones;
+		int precio;
+		System.out.println("Escribe el número de las acciones que quieras comprar:");
+		nacciones=filtrarEscritura();
+		System.out.println("Escribe el precio de las acciones que quieras comprar:");
+		precio=filtrarEscritura();
+		ID=ID+1;
+		Acciones acciones= new Acciones(ID,precio,nacciones);
+		cartera.add(acciones);
+		System.out.println("Acciones añadidas correctamente.\n");
+		
+	}
+	//Método que captura el dato introducido por teclado y comprueba si es un número o un caracter
+	public static int filtrarEscritura() {
+		int numero = 0;
 		Scanner lectura = new Scanner(System.in);
 		try {
-			numero = lectura.nextLong();
-		} catch (InputMismatchException ime) { //Detecta si el dato introducido no es un nÃºmero y lanza un mensaje de error
-			System.out.println("SÃ³lo puede escribir nÃºmeros. IntÃ©ntelo de nuevo: ");
+			numero = lectura.nextInt();
+		} catch (InputMismatchException ime) { //Detecta si el dato introducido no es un número y lanza un mensaje de error
+			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarEscritura(); //Vuelve a solicitar el dato
 		}
 		return numero;
