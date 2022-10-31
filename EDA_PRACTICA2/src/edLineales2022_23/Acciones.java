@@ -35,6 +35,4 @@ public class Acciones {
 	public void setID(int iD) {
 		ID = iD;
 	}
-
-	
 }

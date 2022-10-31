@@ -7,7 +7,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class main{
 	static int ID = 0;
-	static Queue<Acciones> cartera = new LinkedBlockingQueue<Acciones>();
+	static Queue<Acciones> cartera = new LinkedBlockingQueue<Acciones>(); //COLA CARTERA DONDE SE GUARDAN LAS ACCIONES
 
 	public static void main(String[] args)  {
 	mostrarMenu();
@@ -26,6 +26,7 @@ public class main{
 				compraracciones();
 				break;
 			case 2:
+				venderacciones();
 				break;
 			case 3:
 				break;
@@ -42,14 +43,29 @@ public class main{
 	private static void compraracciones() {
 		int nacciones;
 		int precio;
+		/*Crear una acción*/
 		System.out.println("Escribe el número de las acciones que quieras comprar:");
 		nacciones=filtrarEscritura();
 		System.out.println("Escribe el precio de las acciones que quieras comprar:");
 		precio=filtrarEscritura();
-		ID=ID+1;
+		ID+=1; //prioridad
 		Acciones acciones= new Acciones(ID,precio,nacciones);
-		cartera.add(acciones);
+		cartera.add(acciones);//la cola es "cartera"
 		System.out.println("Acciones añadidas correctamente.\n");
+		
+	}
+	
+	private static void venderacciones() {
+		int nacciones;
+		int precio;
+		/*"Matar" la accion*/
+		System.out.println("Escribe el número de las acciones que quieras vender:");
+		nacciones=filtrarEscritura();
+		System.out.println("Escribe el precio de las acciones que quieras vender:");
+		precio=filtrarEscritura();
+		do {
+			if(acciones.getID());
+		} while(nacciones==0);
 		
 	}
 	//Método que captura el dato introducido por teclado y comprueba si es un número o un caracter
