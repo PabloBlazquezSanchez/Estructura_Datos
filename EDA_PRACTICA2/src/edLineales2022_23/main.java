@@ -64,7 +64,14 @@ public class main{
 		System.out.println("Escribe el precio de las acciones que quieras vender:");
 		precio=filtrarEscritura();
 		do {
-			if(acciones.getID());
+			Acciones aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
+			if(aux.getNacciones()<=nacciones) {
+				nacciones-=aux.getNacciones();
+				cartera.remove(aux);
+			}
+			else {
+				nacciones-=aux.getNacciones();
+			}
 		} while(nacciones==0);
 		
 	}
