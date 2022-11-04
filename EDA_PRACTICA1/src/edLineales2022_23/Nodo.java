@@ -3,22 +3,25 @@ package edLineales2022_23;
 // TODO: Auto-generated Javadoc
 /**
  * The Class Nodo.
- *
- * @param <R> the generic type
+ * 
+ * @param <R> el tipo genérico
  */
 public class Nodo<R> {
 
-	/** The element. */
+	/** Elemento de tipo genérico */
 	private R element;	
 	
-	/** The next. */
-	private Nodo<R> next; //Siguiente elemento de la pila dinï¿½mica
+	/** El siguiente nodo, es decir, es el siguiente elemento de la pila dinámica. */
+	private Nodo<R> next;
 	
 	/**
-	 * Instantiates a new nodo.
-	 *
-	 * @param element the element
-	 * @param next the next
+	 * Método constructor del nodo. Aquí se crea; está compuesto del contenido del nodo
+	 * y un enlace al siguiente
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @param element el elemento del nodo
+	 * @param next el enlace al siguiente nodo
 	 */
 	//CONSTRUCTOR
 	public Nodo(R element, Nodo<R> next) {
@@ -27,9 +30,11 @@ public class Nodo<R> {
 	}
 
 	/**
-	 * Gets the element.
-	 *
-	 * @return the element
+	 * Método de consulta que devolverá el elemento del nodo
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @return el elemento que se desea consultar
 	 */
 	//GETTERS Y SETTERS
 	public R getElement() {
@@ -37,31 +42,36 @@ public class Nodo<R> {
 	}
 
 	/**
-	 * Gets the next.
-	 *
-	 * @return the next
+	 * Método de consulta que devolverá el enlace al siguiente nodo
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @return el enlace que se desea consultar
 	 */
 	public Nodo<R> getNext() {
 		return next;
 	}
 
 	/**
-	 * Sets the element.
-	 *
-	 * @param element the new element
+	 * Método de actualización del elemento del nodo
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @param element el nuevo elemento a actualizar
 	 */
 	public void setElement(R element) {
 		this.element = element;
 	}
 
 	/**
-	 * Sets the next.
-	 *
-	 * @param next the new next
+	 * Método de actualización del enlace al siguiente nodo
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @param next el nuevo enlace 
 	 */
 	public void setNext(Nodo<R> next) {
 		this.next = next;
 	}
-	
 	
 }

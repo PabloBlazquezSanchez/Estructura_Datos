@@ -3,12 +3,13 @@ package edLineales2022_23;
 public class Ejemplo1_variante{
 
 	/**
-	 * 
 	 * En el método principal se van a crear las pilas estática y dinámica,
 	 * se insertarán los números a las mismas y, posteriormente se extraen
 	 * los números introducidos y se imprimen en pantalla.
-	 *
-	 * @param args the arguments
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @param args los argumentos propios del método principal
 	 */
 	public static void main(String[] args) {
 		
@@ -27,7 +28,9 @@ public class Ejemplo1_variante{
 	 * Escribir.
 	 * Este método va a imprimir en pantalla los números de la pila
 	 * mientras los elimina de esta.
-	 *
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
 	 * @param p es la pila
 	 */
 	public static void escribir (Stack<Integer> p) {
@@ -41,7 +44,9 @@ public class Ejemplo1_variante{
 	 * Este método va a introducir en la pila los números con ayuda de la llamada
 	 * al método push, que se encuentra en las clases StaticStack y DynamicStack y
 	 * en la interfaz Stack
-	 *
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
 	 * @param q es la pila
 	 */
 	public static void pushes (Stack<Integer> q) {

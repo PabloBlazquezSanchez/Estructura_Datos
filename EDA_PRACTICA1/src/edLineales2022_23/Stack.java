@@ -4,7 +4,7 @@ package edLineales2022_23;
 /**
  * La interfaz de la pila.
  *
- * @param <T> de tipo genérico
+ * @param <T> el tipo genérico
  */
 public interface Stack<T> {
 

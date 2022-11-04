@@ -4,31 +4,46 @@ package edLineales2022_23;
 /**
  * The Class StaticStack.
  *
- * @param <R> the generic type
+ * @param <R> el tipo genérico
  */
 public class StaticStack<R> implements Stack<R> {
 
-	/** The cima. */
+	/** La "cima" (peek o top) y la longitud de la pila. */
 	private int longitud, cima;
 
-	/** The s. */
+	/** El array "S" de tipo genérico. */
 	private R[] S;
 
 	/**
-	 * Instantiates a new static stack.
-	 *
-	 * @param longitud the longitud
+	 * Instanciar una nueva pila estática a través del método constructor (crear pila).
+	 * Es importante inicializar la cima a -1 (por definición de Static Stack ADT)
+	 * y usar un molde "Object" para poder inicializar el array que hará de pila,
+	 * ya que el lenguaje Java posee  una limitación ya que no se pueden crear de
+	 * manera directa un array de genéricos.
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @param longitud el tamaño de la pila
 	 */
 	public StaticStack(int longitud) {
 		this.longitud = longitud;
 		this.cima = -1;
-		S = (R[]) new Object[longitud]; // usamos molde Object (limitacion java)
+		S = (R[]) new Object[longitud]; // molde Object (lim. java)
 	}
 
 	/**
 	 * Push.
-	 *
-	 * @param element the element
+	 * Se introduce un elemento a la pila. Para ello, se usa un preincremento en el peek "cima"
+	 * con el fin de escribir el elemento en la posición correcta del array pila.
+	 * Pero antes, se comprueba si el método size() devuelve el mismo tamaño que la variable
+	 * longitud. De esta manera, podemos controlar si existe un "Stack Overflow", por lo que
+	 * se duplica el tamaño del array S, renombrándolo a "newStack", y, a través de un bucle,
+	 * se van introduciendo los elementos que persisten en el anterior array en el nuevo.
+	 * Por último, el array S pasa a ser newStack, y el valor de la variables longitud se duplica.
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @param element el elemento a introducir en la pila
 	 */
 	public void push(R element) {
 		if (size() == longitud) {
@@ -45,8 +60,15 @@ public class StaticStack<R> implements Stack<R> {
 
 	/**
 	 * Pop.
-	 *
-	 * @return the r
+	 * Este método extrae del array S (pila) el elemento que señala "cima", por lo que
+	 * primero se comprueba si la pila está vacía. En caso afirmativo, se lanza una
+	 * excepción, indicando que la pila no tiene ningún elemento, y se detiene la operación.
+	 * Si no está vacía, usando un decremento postfijo en "cima", se guarda el elemento
+	 * proveniente del array, con el peek en su posición (al acabar la operación baja en 1) 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @return el elemento de tipo genérico a extraer
 	 * @throws EmptyStackException the empty stack exception
 	 */
 	public R pop() throws EmptyStackException {

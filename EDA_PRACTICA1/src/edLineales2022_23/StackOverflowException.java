@@ -7,9 +7,12 @@ package edLineales2022_23;
 public class StackOverflowException extends RuntimeException{
 	
 	/**
-	 * Instantiates a new stack overflow exception.
-	 *
-	 * @param mensajeerror the mensajeerror
+	 * Instanciar la excepción de la pila (estática) llena (Stack Overflow)
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @param mensajeerror el mensaje de error que se deberá mostrar para cuando se
+	 * quiera lanzar una excepción
 	 */
 	public StackOverflowException (String mensajeerror) {
 		super(mensajeerror);

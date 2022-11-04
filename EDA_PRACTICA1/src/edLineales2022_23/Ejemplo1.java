@@ -6,8 +6,10 @@ public class Ejemplo1 {
 	 * En el método principal se van a crear las pilas estática y dinámica,
 	 * se insertarán los números a las mismas y, posteriormente se extraen
 	 * los números introducidos y se imprimen en pantalla.
-	 *
-	 * @param args the arguments
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * @param args los argumentos propios del método principal
 	 */
 	public static void main(String[] args) {
 		Stack<Integer> pila = new StaticStack<Integer>(6);
