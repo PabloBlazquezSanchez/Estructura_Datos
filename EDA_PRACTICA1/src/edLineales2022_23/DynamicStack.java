@@ -2,7 +2,7 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class DynamicStack.
+ * Clase donde se implementa la pila dinámica
  *
  * @param <R> el tipo genérico
  */
@@ -17,9 +17,9 @@ public class DynamicStack<R> implements Stack<R> {
 	/* Estos dos atributos serviran para todo y lo unico que necesitamos */
 
 	/**
-	 * CONSTRUCTOR - Crear el objeto Almacenamos el primer elemento de la pila NOTA:
+	 * Crear el objeto Almacenamos el primer elemento de la pila. NOTA:
 	 * Usamos el constructor para asegurarnos que primero se refiere a null. En Java
-	 * no harï¿½a falta
+	 * no haría falta
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
@@ -36,7 +36,7 @@ public class DynamicStack<R> implements Stack<R> {
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * @param elemento a insertar
+	 * @param element el elemento a introducir en la pila
 	 */
 	
 	public void push(R element) {
@@ -59,7 +59,7 @@ public class DynamicStack<R> implements Stack<R> {
 	public R pop() throws EmptyStackException {
 		R element;
 		if (isEmpty() /* || primero == null */)
-			throw new EmptyStackException("\nLa pila estÃ¡ actualmente vacÃ­a.");
+			throw new EmptyStackException("\nLa pila está actualmente vacía.");
 		else {
 			element = primero.getElement();
 			primero = primero.getNext();

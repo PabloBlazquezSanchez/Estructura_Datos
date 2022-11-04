@@ -2,7 +2,7 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * La interfaz de la pila.
+ * Interfaz de la pila
  *
  * @param <T> el tipo genérico
  */

@@ -1,8 +1,7 @@
 package edLineales2022_23;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class StaticStack.
+* Clase donde se implementa la pila estática.
  *
  * @param <R> el tipo genérico
  */
@@ -32,7 +31,6 @@ public class StaticStack<R> implements Stack<R> {
 	}
 
 	/**
-	 * Push.
 	 * Se introduce un elemento a la pila. Para ello, se usa un preincremento en el peek "cima"
 	 * con el fin de escribir el elemento en la posición correcta del array pila.
 	 * Pero antes, se comprueba si el método size() devuelve el mismo tamaño que la variable
@@ -59,7 +57,6 @@ public class StaticStack<R> implements Stack<R> {
 	}
 
 	/**
-	 * Pop.
 	 * Este método extrae del array S (pila) el elemento que señala "cima", por lo que
 	 * primero se comprueba si la pila está vacía. En caso afirmativo, se lanza una
 	 * excepción, indicando que la pila no tiene ningún elemento, y se detiene la operación.
