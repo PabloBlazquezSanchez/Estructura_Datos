@@ -2,7 +2,7 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class EmptyStackException.
+* Clase donde se implementa la excepción que ocurre cuando la pila está vacía
  */
 public class EmptyStackException extends RuntimeException{
 	

@@ -2,7 +2,7 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class StackOverflowException.
+* Clase donde se implementa la excepción que ocurre cuando la pila (estática) está llena
  */
 public class StackOverflowException extends RuntimeException{
 	

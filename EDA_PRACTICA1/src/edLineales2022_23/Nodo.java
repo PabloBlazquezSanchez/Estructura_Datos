@@ -2,7 +2,7 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Nodo.
+* Clase donde se implementa el nodo de la pila dinámica
  * 
  * @param <R> el tipo genérico
  */
