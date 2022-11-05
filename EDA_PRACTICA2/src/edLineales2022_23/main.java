@@ -54,6 +54,21 @@ public class main{
 		System.out.println("Acciones añadidas correctamente.\n");
 		
 	}
+	/**
+	 * Para poder vender una acción, se pide el precio y nº acciones (variables locales)
+	 * de las acciones a vender (ambos datos pasan por un filtro de escritura). El precio servirá
+	 * únicamente para calcular el beneficio.
+	 * Acto seguido se declara una variable auxiliar de tipo Acciones cuyo valor será el "peek"
+	 * de la cola "cartera", que tendrá una función de puntero. Así, podremos modificar la cola
+	 * cómodamente, ya que si en un elemento de la cola hay menos acciones de las que se quieren
+	 * vender, el número de las acciones (local) se restará a las acciones de la "cartera", y después
+	 * se elimina dicho elemento de la cartera. Pero si hay más acciones en la cartera de las solicitadas,
+	 * simplemente se restan como el caso anterior.
+	 * Todo esto se repetirá en bucle (do-while) hasta que el número de acciones (local) sea cero.
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * */
 	
 	private static void venderacciones() {
 		int nacciones;
@@ -75,7 +90,18 @@ public class main{
 		} while(nacciones==0);
 		
 	}
-	//Método que captura el dato introducido por teclado y comprueba si es un número o un caracter
+
+	/**
+	 *Para evitar que al introducir un número se introduzca un carácter no deseado,
+	 *se ha diseñado un pequeño método recursivo que detecta, a través de la excepción
+	 *incluida en la API de Java "Input Mismatch Exception", si el carácter escrito por teclado
+	 *no es un número. De ser así, se lanza el mensaje de error y se vuelve a pedir el número, llamando
+	 *a la función recursiva. El ciclo acaba cuando se introduce un número, el cual se devolverá.
+	 * @return número entero utilzable en cualquier método del programa
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
+	 * */
 	public static int filtrarEscritura() {
 		int numero = 0;
 		Scanner lectura = new Scanner(System.in);
