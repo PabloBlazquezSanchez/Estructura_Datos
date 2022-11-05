@@ -76,7 +76,7 @@ public class main{
 		/*"Matar" la accion*/
 		System.out.println("Escribe el número de las acciones que quieras vender:");
 		nacciones=filtrarEscritura();
-		System.out.println("Escribe el precio de las acciones que quieras vender:");
+		System.out.println("Escribe el precio al que vas a vender las acciones:");
 		precio=filtrarEscritura();
 		do {
 			Acciones aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
