@@ -16,7 +16,8 @@ public class Acciones {
 	private int ID;
 	
 	/**
-	 * Instantiates a new acciones.
+	 * Este metodo sirve para crear una variable de tipo Acciones que contenga un ID,
+	 * un precio y un número de acciones.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -32,7 +33,8 @@ public class Acciones {
 	}
 
 	/**
-	 * Gets the precio.
+	 * Este método devuelve el valor almacenado en la variable precio, que a su vez está
+	 * almacenado en una variable de tipo Acciones.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -44,7 +46,8 @@ public class Acciones {
 	}
 
 	/**
-	 * Sets the precio.
+	 * Este método modifica el valor almacenado en la variable precio, que a su vez está
+	 * almacenado en una variable de tipo Acciones.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -56,7 +59,8 @@ public class Acciones {
 	}
 
 	/**
-	 * Gets the nacciones.
+	 * Este método devuelve el valor almacenado en la variable nacciones, que a su vez está
+	 * almacenado en una variable de tipo Acciones.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -68,7 +72,8 @@ public class Acciones {
 	}
 
 	/**
-	 * Sets the nacciones.
+	 * Este método modifica el valor almacenado en la variable nacciones, que a su vez está
+	 * almacenado en una variable de tipo Acciones.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -80,7 +85,8 @@ public class Acciones {
 	}
 
 	/**
-	 * Gets the id.
+	 * Este método devuelve el valor almacenado en la variable ID, que a su vez está
+	 * almacenado en una variable de tipo Acciones.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -92,7 +98,8 @@ public class Acciones {
 	}
 
 	/**
-	 * Sets the id.
+	 * Este método modifica el valor almacenado en la variable ID, que a su vez está
+	 * almacenado en una variable de tipo Acciones.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
