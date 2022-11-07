@@ -45,8 +45,8 @@ public class main {
 	}
 
 	private static void totalterminos() {
-		System.out.println("El número total de términos que hay en el diccionario es: "+diccionario.size());
-		
+		System.out.println("El número total de términos que hay en el diccionario es: " + diccionario.size());
+
 	}
 
 	private static void anadirtermino() {
@@ -74,7 +74,8 @@ public class main {
 				}
 			}
 
-			if (clave) { //Hay que esperar que recorra toda la  lista y así evitamos problemas de concurrencia y comprobamos todos los terminos
+			if (clave) { // Hay que esperar que recorra toda la lista y así evitamos problemas de
+							// concurrencia y comprobamos todos los terminos
 				diccionario.add(palabra);
 				System.out.println("El término ha sido añadido correctamente.");
 			}
@@ -82,13 +83,39 @@ public class main {
 	}
 
 	private static void eliminartermino() {
-		String termino;
+		String nombre;
+		boolean clave = false;
 		System.out.println("Escriba el nombre término que quiera eliminar:");
-		termino = filtrarTexto();
+		nombre = filtrarTexto();
+		int index = 0;
+		if (diccionario.isEmpty()) {
+			System.out.println("La lista está vacía. No se puede borrar nada.");
+		} else {
+			for (Termino element : diccionario) {
+				String nombre_revision = element.getNombre();
+				index = diccionario.indexOf(element);
+				if (nombre_revision.equals(nombre)) {
+					System.out.println("El término ha sido borrado correctamente.");
+					clave = true;
 
+					break;
+				} else {
+					clave = false;
+				}
+			}
+
+			if (clave) { // Hay que esperar que recorra toda la lista y así evitamos problemas de
+				// concurrencia y comprobamos todos los terminos
+				diccionario.remove(index);
+			}else {
+				System.out.println("No se ha encontrado ningún término con dicho nombre");
+			}
+			
+		}
 	}
 
-	// Método que captura el dato introducido por teclado y comprueba si es un número o un caracter
+	// Método que captura el dato introducido por teclado y comprueba si es un
+	// número o un caracter
 	public static int filtrarNumero() {
 		int numero = 0;
 		Scanner lectura = new Scanner(System.in);
