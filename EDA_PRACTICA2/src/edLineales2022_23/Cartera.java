@@ -2,13 +2,23 @@ package edLineales2022_23;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Cartera.
+ */
 public class Cartera {
+	
+	/** The cartera. */
 	Queue<Acciones> cartera;// = new LinkedBlockingQueue<Acciones>(); //COLA CARTERA
 	
+	/**
+	 * Instantiates a new cartera.
+	 */
 	public Cartera() { //constr
 		this.cartera = new LinkedBlockingQueue<Acciones>();
 	}
 	
+	/** The totalaccionescartera. */
 	private int totalaccionescartera = 0;
 	
 //	public void recorrercartera() {
@@ -19,7 +29,14 @@ public class Cartera {
 //		}
 //	}
 	
-	public void compraracciones(int ID_prioridad, int preciocompra, int accionescomprar) {
+	/**
+ * Compraracciones.
+ *
+ * @param ID_prioridad the i D prioridad
+ * @param preciocompra the preciocompra
+ * @param accionescomprar the accionescomprar
+ */
+public void compraracciones(int ID_prioridad, int preciocompra, int accionescomprar) {
 		Acciones acciones= new Acciones(ID_prioridad,preciocompra,accionescomprar);
 		cartera.add(acciones);//la cola es "cartera"
 		System.out.println("Size: "+cartera.size());
@@ -39,10 +56,12 @@ public class Cartera {
 	 * se elimina dicho elemento de la cartera. Pero si hay más acciones en la cartera de las solicitadas,
 	 * simplemente se restan como el caso anterior.
 	 * Todo esto se repetirá en bucle (do-while) hasta que el número de acciones (local) sea cero.
+	 *
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * */
+	 * @param naccionesvender the naccionesvender
+	 */
 	
 	public void venderacciones(int naccionesvender) {
 		

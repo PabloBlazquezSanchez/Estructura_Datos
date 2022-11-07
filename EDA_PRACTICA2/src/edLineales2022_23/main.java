@@ -5,15 +5,34 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.concurrent.LinkedBlockingQueue;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class main.
+ */
 public class main{
+	
+	/** The id. */
 	static int ID = 0;
+	
+	/** The cartera. */
 	static Cartera cartera = new Cartera();
+	
+	/** The beneficio. */
 	static int beneficio = 0;
 	
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args)  {
 	mostrarMenu();
 }
+	
+	/**
+	 * Mostrar menu.
+	 */
 	public static void mostrarMenu() {
 		int opcion = 0;
 		do {
@@ -53,16 +72,17 @@ public class main{
 	}
 
 	/**
-	 *Para evitar que al introducir un número se introduzca un carácter no deseado,
-	 *se ha diseñado un pequeño método recursivo que detecta, a través de la excepción
-	 *incluida en la API de Java "Input Mismatch Exception", si el carácter escrito por teclado
-	 *no es un número. De ser así, se lanza el mensaje de error y se vuelve a pedir el número, llamando
-	 *a la función recursiva. El ciclo acaba cuando se introduce un número, el cual se devolverá.
-	 * @return número entero utilzable en cualquier método del programa
+	 * Para evitar que al introducir un número se introduzca un carácter no deseado,
+	 * se ha diseñado un pequeño método recursivo que detecta, a través de la excepción
+	 * incluida en la API de Java "Input Mismatch Exception", si el carácter escrito por teclado
+	 * no es un número. De ser así, se lanza el mensaje de error y se vuelve a pedir el número, llamando
+	 * a la función recursiva. El ciclo acaba cuando se introduce un número, el cual se devolverá.
+	 *
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
-	 * */
+	 * @return número entero utilzable en cualquier método del programa
+	 */
 	public static int filtrarEscritura() {
 		int numero = 0;
 		Scanner lectura = new Scanner(System.in);
