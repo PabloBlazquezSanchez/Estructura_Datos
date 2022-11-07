@@ -30,6 +30,7 @@ public class main {
 				eliminartermino();
 				break;
 			case 3:
+				deftermino();
 				break;
 			case 4:
 				totalterminos();
@@ -42,6 +43,30 @@ public class main {
 				break;
 			}
 		} while (opcion != 5);
+	}
+
+	private static void deftermino() {
+		String nombre;
+		boolean clave=false;
+		System.out.println("Introduzca a continuación el término del que desea conocer la definición:");
+		nombre=filtrarTexto();
+		if(diccionario.isEmpty()) {
+			System.out.println("El diccionario está vacío.");
+		}else {
+			for(Termino element : diccionario) {
+				String nombre_revision=element.getNombre();
+				if(nombre_revision.equals(nombre)) {
+					System.out.println(nombre+": "+element.getDefinicion());
+					break;
+				}else {
+					clave=true;
+				}
+			}
+		}
+		if(clave) {
+			System.out.println("El término no se encuentra en el diccionario.");
+		}
+		
 	}
 
 	private static void totalterminos() {
