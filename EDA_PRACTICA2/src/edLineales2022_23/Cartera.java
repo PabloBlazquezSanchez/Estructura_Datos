@@ -22,7 +22,7 @@ public class Cartera {
 	public void compraracciones(int ID_prioridad, int preciocompra, int accionescomprar) {
 		Acciones acciones= new Acciones(ID_prioridad,preciocompra,accionescomprar);
 		cartera.add(acciones);//la cola es "cartera"
-		System.out.println(cartera.size());
+		System.out.println("Size: "+cartera.size());
 		totalaccionescartera+=accionescomprar;
 		System.out.println("Total acciones: "+totalaccionescartera);
 		System.out.println("Acciones añadidas correctamente.\n");
@@ -64,14 +64,18 @@ public class Cartera {
 			do {
 				Acciones aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
 				if(aux.getNacciones()<=naccionesvender) {
+					totalaccionescartera-=aux.getNacciones();
 					naccionesvender-=aux.getNacciones();
 					cartera.remove(aux);
+					System.out.println("Size: "+cartera.size());
+					venderacciones(naccionesvender);
 				}
 				else {
 					totalaccionescartera-=naccionesvender;
 				}
 				naccionesvender-=aux.getNacciones();
 				System.out.println("Total acciones: "+totalaccionescartera);
+				System.out.println("Size: "+cartera.size());
 			} while(naccionesvender>0);
 		}
 	}
