@@ -7,8 +7,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class main{
 	static int ID = 0;
-	static Queue<Acciones> cartera = new LinkedBlockingQueue<Acciones>(); //COLA CARTERA DONDE SE GUARDAN LAS ACCIONES
-
+	static Cartera cartera = new Cartera();
+	static int beneficio = 0;
+	
+	
 	public static void main(String[] args)  {
 	mostrarMenu();
 }
@@ -23,10 +25,20 @@ public class main{
 			opcion = filtrarEscritura();
 			switch (opcion) {
 			case 1:
-				compraracciones();
+				System.out.println("Acciones a comprar: ");
+				int accionescomprar=filtrarEscritura();
+				System.out.println("Precio acciones a comprar: ");
+				int precioaccicomprar=filtrarEscritura();
+				ID+=1;
+				cartera.compraracciones(ID,precioaccicomprar,accionescomprar);
 				break;
 			case 2:
-				venderacciones();
+				int naccionesvender,precioventa;
+				System.out.println("Escribe el número de las acciones que quieras vender:");
+				naccionesvender=filtrarEscritura();
+				System.out.println("Escribe el precio de las acciones que quieras vender:");
+				precioventa=filtrarEscritura();
+				cartera.venderacciones(naccionesvender);
 				break;
 			case 3:
 				break;
@@ -38,57 +50,6 @@ public class main{
 				break;
 			}
 		} while (opcion != 4);
-	}
-		
-	private static void compraracciones() {
-		int nacciones;
-		int precio;
-		/*Crear una acción*/
-		System.out.println("Escribe el número de las acciones que quieras comprar:");
-		nacciones=filtrarEscritura();
-		System.out.println("Escribe el precio de las acciones que quieras comprar:");
-		precio=filtrarEscritura();
-		ID+=1; //prioridad
-		Acciones acciones= new Acciones(ID,precio,nacciones);
-		cartera.add(acciones);//la cola es "cartera"
-		System.out.println("Acciones añadidas correctamente.\n");
-		
-	}
-	/**
-	 * Para poder vender una acción, se pide el precio y nº acciones (variables locales)
-	 * de las acciones a vender (ambos datos pasan por un filtro de escritura). El precio servirá
-	 * únicamente para calcular el beneficio.
-	 * Acto seguido se declara una variable auxiliar de tipo Acciones cuyo valor será el "peek"
-	 * de la cola "cartera", que tendrá una función de puntero. Así, podremos modificar la cola
-	 * cómodamente, ya que si en un elemento de la cola hay menos acciones de las que se quieren
-	 * vender, el número de las acciones (local) se restará a las acciones de la "cartera", y después
-	 * se elimina dicho elemento de la cartera. Pero si hay más acciones en la cartera de las solicitadas,
-	 * simplemente se restan como el caso anterior.
-	 * Todo esto se repetirá en bucle (do-while) hasta que el número de acciones (local) sea cero.
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
-	 *         Cruz.
-	 * @version 1.0
-	 * */
-	
-	private static void venderacciones() {
-		int nacciones;
-		int precio;
-		/*"Matar" la accion*/
-		System.out.println("Escribe el número de las acciones que quieras vender:");
-		nacciones=filtrarEscritura();
-		System.out.println("Escribe el precio al que vas a vender las acciones:");
-		precio=filtrarEscritura();
-		do {
-			Acciones aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
-			if(aux.getNacciones()<=nacciones) {
-				nacciones-=aux.getNacciones();
-				cartera.remove(aux);
-			}
-			else {
-				nacciones-=aux.getNacciones();
-			}
-		} while(nacciones==0);
-		
 	}
 
 	/**
@@ -113,6 +74,4 @@ public class main{
 		}
 		return numero;
 	}
-	
-	
 }
