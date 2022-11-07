@@ -24,7 +24,7 @@ public class Cartera {
 		cartera.add(acciones);//la cola es "cartera"
 		System.out.println(cartera.size());
 		totalaccionescartera+=accionescomprar;
-		System.out.println(totalaccionescartera);
+		System.out.println("Total acciones: "+totalaccionescartera);
 		System.out.println("Acciones añadidas correctamente.\n");
 	}
 	
@@ -68,10 +68,10 @@ public class Cartera {
 					cartera.remove(aux);
 				}
 				else {
-					naccionesvender-=aux.getNacciones();
+					totalaccionescartera-=naccionesvender;
 				}
-				totalaccionescartera-=naccionesvender;
-				System.out.println(totalaccionescartera);
+				naccionesvender-=aux.getNacciones();
+				System.out.println("Total acciones: "+totalaccionescartera);
 			} while(naccionesvender>0);
 		}
 	}
