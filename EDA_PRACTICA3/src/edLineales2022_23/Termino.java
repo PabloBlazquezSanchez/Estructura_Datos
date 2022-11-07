@@ -2,14 +2,14 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Termino.
+ * Clase donde se implementa el elemento término
  */
 public class Termino {
 
-	/** The definicion. */
+	/**Variable que guarda la definición.*/
 	private String definicion;
 
-	/** The nombre. */
+	/** Variable que guarda el nombre.*/
 	private String nombre;
 
 	/**
