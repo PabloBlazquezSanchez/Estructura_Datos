@@ -2,21 +2,21 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Acciones.
+ * Clase acción
  */
-public class Acciones {
+public class Accion {
 
-	/** The precio. */
+	/** Precio de las acción */
 	private int precio;
 	
-	/** The nacciones. */
+	/** Número de acción. */
 	private int nacciones;
 	
-	/** The id. */
+	/** ID de importancia de acción*/
 	private int ID;
 	
 	/**
-	 * Este metodo sirve para crear una variable de tipo Acciones que contenga un ID,
+	 * Este metodo sirve para crear una variable de tipo Accion que contenga un ID,
 	 * un precio y un número de acciones.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
@@ -26,7 +26,7 @@ public class Acciones {
 	 * @param precio the precio
 	 * @param nacciones the nacciones
 	 */
-	public Acciones(int ID,int precio,int nacciones){
+	public Accion(int ID,int precio,int nacciones){
 		this.precio=precio;
 		this.nacciones=nacciones;
 		this.ID=ID;
@@ -34,7 +34,7 @@ public class Acciones {
 
 	/**
 	 * Este método devuelve el valor almacenado en la variable precio, que a su vez está
-	 * almacenado en una variable de tipo Acciones.
+	 * almacenado en una variable de tipo Accion.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -47,7 +47,7 @@ public class Acciones {
 
 	/**
 	 * Este método modifica el valor almacenado en la variable precio, que a su vez está
-	 * almacenado en una variable de tipo Acciones.
+	 * almacenado en una variable de tipo Accion.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -60,7 +60,7 @@ public class Acciones {
 
 	/**
 	 * Este método devuelve el valor almacenado en la variable nacciones, que a su vez está
-	 * almacenado en una variable de tipo Acciones.
+	 * almacenado en una variable de tipo Accion.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -73,7 +73,7 @@ public class Acciones {
 
 	/**
 	 * Este método modifica el valor almacenado en la variable nacciones, que a su vez está
-	 * almacenado en una variable de tipo Acciones.
+	 * almacenado en una variable de tipo Accion.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -86,7 +86,7 @@ public class Acciones {
 
 	/**
 	 * Este método devuelve el valor almacenado en la variable ID, que a su vez está
-	 * almacenado en una variable de tipo Acciones.
+	 * almacenado en una variable de tipo Accion.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
@@ -99,7 +99,7 @@ public class Acciones {
 
 	/**
 	 * Este método modifica el valor almacenado en la variable ID, que a su vez está
-	 * almacenado en una variable de tipo Acciones.
+	 * almacenado en una variable de tipo Accion.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0

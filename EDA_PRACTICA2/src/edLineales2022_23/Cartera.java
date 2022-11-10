@@ -9,13 +9,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class Cartera {
 	
 	/** The cartera. */
-	Queue<Acciones> cartera;// = new LinkedBlockingQueue<Acciones>(); //COLA CARTERA
+	Queue<Accion> cartera;// = new LinkedBlockingQueue<Acciones>(); //COLA CARTERA
 	
 	/**
 	 * Instantiates a new cartera.
 	 */
 	public Cartera() { //constr
-		this.cartera = new LinkedBlockingQueue<Acciones>();
+		this.cartera = new LinkedBlockingQueue<Accion>();
 	}
 	
 	/** The totalaccionescartera. */
@@ -37,7 +37,7 @@ public class Cartera {
  * @param accionescomprar the accionescomprar
  */
 public void compraracciones(int ID_prioridad, int preciocompra, int accionescomprar) {
-		Acciones acciones= new Acciones(ID_prioridad,preciocompra,accionescomprar);
+		Accion acciones= new Accion(ID_prioridad,preciocompra,accionescomprar);
 		cartera.add(acciones);//la cola es "cartera"
 		System.out.println("Size: "+cartera.size());
 		totalaccionescartera+=accionescomprar;
@@ -81,7 +81,7 @@ public void compraracciones(int ID_prioridad, int preciocompra, int accionescomp
 		}
 		else {
 			do {
-				Acciones aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
+				Accion aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
 				if(aux.getNacciones()<=naccionesvender) {
 					totalaccionescartera-=aux.getNacciones();
 					naccionesvender-=aux.getNacciones();

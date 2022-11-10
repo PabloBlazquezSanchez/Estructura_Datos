@@ -2,7 +2,7 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * Clase donde se implementa el elemento término
+ * Clase donde se implementa el elemento término.
  */
 public class Termino {
 

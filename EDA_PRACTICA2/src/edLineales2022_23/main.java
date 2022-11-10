@@ -44,9 +44,9 @@ public class main{
 			opcion = filtrarEscritura();
 			switch (opcion) {
 			case 1:
-				System.out.println("Acciones a comprar: ");
+				System.out.println("Escribe el número de las acciones que quieras comprar: ");
 				int accionescomprar=filtrarEscritura();
-				System.out.println("Precio acciones a comprar: ");
+				System.out.println("Escribe el precio de las acciones que quieras comprar: ");
 				int precioaccicomprar=filtrarEscritura();
 				ID+=1;
 				cartera.compraracciones(ID,precioaccicomprar,accionescomprar);
