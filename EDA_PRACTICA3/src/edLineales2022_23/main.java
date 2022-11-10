@@ -6,29 +6,27 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.LinkedBlockingQueue;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class main.
+ * Clase principal.
  */
 public class main {
 
-	/** The id. */
+	/** ID. */
 	static int ID = 0;
 
-	/** The diccionario. */
+	/** Diccionario. */
 	static Diccionario diccionario = new Diccionario();
 
 	/**
-	 * The main method.
+	 * El método principal donde se va a llamar al menú.
 	 *
-	 * @param args the arguments
+	 * @param args los argumentos propios del método principal
 	 */
 	public static void main(String[] args) {
 		mostrarMenu();
 	}
 
 	/**
-	 * Mostrar menu.
 	 * 
 	 * Este método muestra por pantalla un menú con distintas opciones para realizar
 	 * una acción. En este mismo método se van a llamar a los distintos métodos de
@@ -82,7 +80,6 @@ public class main {
 	// Método que captura el dato introducido por teclado y comprueba si es un
 	// número o un caracter
 	/**
-	 * Filtrar numero.
 	 * 
 	 * Este método captura el dato introducido por teclado y analiza si se ha
 	 * introducido un caracter o un número. Si se introduce un caracter lanza un
@@ -92,7 +89,7 @@ public class main {
 	 *         Cruz
 	 * @version 1.0
 	 *
-	 * @return the int
+	 * @return numero El número escrito por el usuario
 	 */
 
 	public static int filtrarNumero() {
@@ -109,7 +106,6 @@ public class main {
 	}
 
 	/**
-	 * Filtrar texto.
 	 * 
 	 * Este método captura el dato introducido por teclado y analiza si se ha
 	 * introducido un caracter o un número. Si se introduce un número lanza un
@@ -119,7 +115,7 @@ public class main {
 	 *         Cruz
 	 * @version 1.0
 	 *
-	 * @return the string
+	 * @return texto El texto escrito por el usuario
 	 */
 	public static String filtrarTexto() {
 		String texto;

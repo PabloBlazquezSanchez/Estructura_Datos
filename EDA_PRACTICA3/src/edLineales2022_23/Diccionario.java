@@ -6,15 +6,14 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Diccionario.
+ * Clase Diccionario.
  */
 public class Diccionario {
 
-	/** The diccionario. */
+	/**  La lista diccionario donde se alamacenarán los términos. */
 	static List<Termino> diccionario;
 
 	/**
-	 * Instantiates a new diccionario.
 	 * 
 	 * Este método sirve para crear una variable de tipo Diccionario que contenga un
 	 * termino.
@@ -28,7 +27,6 @@ public class Diccionario {
 	}
 
 	/**
-	 * Añadirtermino.
 	 * 
 	 * Este método añade un término a la variable de tipo diccionario. Comprueba si
 	 * el diccionario está vacío y si lo está añade el término. En caso contrario
@@ -38,7 +36,7 @@ public class Diccionario {
 	 *         Cruz
 	 * @version 1.0
 	 *
-	 * @param palabra the palabra
+	 * @param palabra Creado con los datos especificados por el usuario
 	 */
 	public void añadirtermino(Termino palabra) {
 		boolean clave = true;
@@ -66,7 +64,6 @@ public class Diccionario {
 	}
 
 	/**
-	 * Eliminartermino.
 	 * 
 	 * Este método elimina un término de la variable de tipo diccionario.
 	 * 
@@ -74,7 +71,7 @@ public class Diccionario {
 	 *         Cruz
 	 * @version 1.0
 	 *
-	 * @param nombre the nombre
+	 * @param nombre Nombre del término escrito por el usuario
 	 */
 	public void eliminartermino(String nombre) {
 		boolean clave = false;
@@ -105,9 +102,8 @@ public class Diccionario {
 	}
 
 	/**
-	 * Deftermino.
 	 * 
-	 * Ete método muestra por pantalla la definición de un término introducido por
+	 * Este método muestra por pantalla la definición de un término introducido por
 	 * teclado y que, previamente, haya sido almacenado en la variable de tipo
 	 * diccionario.
 	 * 
@@ -115,7 +111,7 @@ public class Diccionario {
 	 *         Cruz
 	 * @version 1.0
 	 *
-	 * @param nombre the nombre
+	 * @param nombre Nombre del término escrito por el usuario
 	 */
 	public void deftermino(String nombre) {
 		boolean clave = false;
@@ -140,7 +136,6 @@ public class Diccionario {
 	}
 
 	/**
-	 * Tamano.
 	 * 
 	 * Este método devuelve el tamaño del diccionario en el momento de la llamada.
 	 * 
@@ -148,7 +143,7 @@ public class Diccionario {
 	 *         Cruz
 	 * @version 1.0
 	 *
-	 * @return the int
+	 * @return El número de términos del diccionario
 	 */
 	public int tamano() {
 		return diccionario.size();

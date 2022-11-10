@@ -25,7 +25,6 @@ public class Ejemplo1_variante{
 	}
 		
 	/**
-	 * Escribir.
 	 * Este método va a imprimir en pantalla los números de la pila
 	 * mientras los elimina de esta.
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
@@ -40,7 +39,6 @@ public class Ejemplo1_variante{
 	}
 	
 	/**
-	 * Pushes.
 	 * Este método va a introducir en la pila los números con ayuda de la llamada
 	 * al método push, que se encuentra en las clases StaticStack y DynamicStack y
 	 * en la interfaz Stack
