@@ -9,12 +9,19 @@ import java.util.concurrent.LinkedBlockingQueue;
  * The Class Diccionario.
  */
 public class Diccionario {
-	
+
 	/** The diccionario. */
 	static List<Termino> diccionario;
 
 	/**
 	 * Instantiates a new diccionario.
+	 * 
+	 * Este método sirve para crear una variable de tipo Diccionario que contenga un
+	 * termino.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz
+	 * @version 1.0
 	 */
 	public Diccionario() { // constr
 		this.diccionario = new LinkedList<Termino>();
@@ -22,6 +29,14 @@ public class Diccionario {
 
 	/**
 	 * Añadirtermino.
+	 * 
+	 * Este método añade un término a la variable de tipo diccionario. Comprueba si
+	 * el diccionario está vacío y si lo está añade el término. En caso contrario
+	 * comprueba si el término ya existe en el diccionario.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz
+	 * @version 1.0
 	 *
 	 * @param palabra the palabra
 	 */
@@ -52,6 +67,12 @@ public class Diccionario {
 
 	/**
 	 * Eliminartermino.
+	 * 
+	 * Este método elimina un término de la variable de tipo diccionario.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz
+	 * @version 1.0
 	 *
 	 * @param nombre the nombre
 	 */
@@ -85,6 +106,14 @@ public class Diccionario {
 
 	/**
 	 * Deftermino.
+	 * 
+	 * Ete método muestra por pantalla la definición de un término introducido por
+	 * teclado y que, previamente, haya sido almacenado en la variable de tipo
+	 * diccionario.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz
+	 * @version 1.0
 	 *
 	 * @param nombre the nombre
 	 */
@@ -112,6 +141,12 @@ public class Diccionario {
 
 	/**
 	 * Tamano.
+	 * 
+	 * Este método devuelve el tamaño del diccionario en el momento de la llamada.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz
+	 * @version 1.0
 	 *
 	 * @return the int
 	 */

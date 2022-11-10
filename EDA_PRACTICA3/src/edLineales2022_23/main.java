@@ -29,6 +29,15 @@ public class main {
 
 	/**
 	 * Mostrar menu.
+	 * 
+	 * Este método muestra por pantalla un menú con distintas opciones para realizar
+	 * una acción. En este mismo método se van a llamar a los distintos métodos de
+	 * la clase Diccionario según la opción que se haya seleccionado.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz
+	 * @version 1.0
+	 * 
 	 */
 	public static void mostrarMenu() {
 		int opcion = 0;
@@ -74,6 +83,14 @@ public class main {
 	// número o un caracter
 	/**
 	 * Filtrar numero.
+	 * 
+	 * Este método captura el dato introducido por teclado y analiza si se ha
+	 * introducido un caracter o un número. Si se introduce un caracter lanza un
+	 * mensaje de error.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz
+	 * @version 1.0
 	 *
 	 * @return the int
 	 */
@@ -93,6 +110,14 @@ public class main {
 
 	/**
 	 * Filtrar texto.
+	 * 
+	 * Este método captura el dato introducido por teclado y analiza si se ha
+	 * introducido un caracter o un número. Si se introduce un número lanza un
+	 * mensaje de error.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz
+	 * @version 1.0
 	 *
 	 * @return the string
 	 */
