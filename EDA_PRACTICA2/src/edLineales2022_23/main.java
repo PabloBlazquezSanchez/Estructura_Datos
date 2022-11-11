@@ -57,9 +57,10 @@ public class main{
 				naccionesvender=filtrarEscritura();
 				System.out.println("Escribe el precio de las acciones que quieras vender:");
 				precioventa=filtrarEscritura();
-				cartera.venderacciones(naccionesvender);
+				cartera.venderacciones(naccionesvender,precioventa);
 				break;
 			case 3:
+				System.out.println("El beneficio total que se ha obtenido es un total de "+cartera.devolverbeneficio());
 				break;
 			case 4:
 				System.out.println("Programa finalizado.");

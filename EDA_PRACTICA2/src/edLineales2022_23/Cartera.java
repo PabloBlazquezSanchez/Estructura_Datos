@@ -10,7 +10,7 @@ public class Cartera {
 	
 	/** The cartera. */
 	Queue<Accion> cartera;// = new LinkedBlockingQueue<Acciones>(); //COLA CARTERA
-	
+	int beneficio=0;
 	/**
 	 * Instantiates a new cartera.
 	 */
@@ -63,7 +63,7 @@ public void compraracciones(int ID_prioridad, int preciocompra, int accionescomp
 	 * @param naccionesvender the naccionesvender
 	 */
 	
-	public void venderacciones(int naccionesvender) {
+	public void venderacciones(int naccionesvender, int precioventa) {
 		
 //		do {
 //			Acciones aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
@@ -85,19 +85,24 @@ public void compraracciones(int ID_prioridad, int preciocompra, int accionescomp
 				if(aux.getNacciones()<=naccionesvender) {
 					totalaccionescartera-=aux.getNacciones();
 					naccionesvender-=aux.getNacciones();
+					beneficio+=(precioventa-aux.getPrecio());
 					cartera.remove(aux);
 					System.out.println("Size: "+cartera.size());
-					venderacciones(naccionesvender);
+					venderacciones(naccionesvender,precioventa);
 				}
 				else {
 					totalaccionescartera-=naccionesvender;
 				}
 				naccionesvender-=aux.getNacciones();
+				beneficio+=(precioventa-aux.getPrecio());
 				System.out.println("Total acciones: "+totalaccionescartera);
 				System.out.println("Size: "+cartera.size());
 			} while(naccionesvender>0);
 		}
 	}
 	
+	public int devolverbeneficio() {
+		return beneficio;
+	}
 	
 }
