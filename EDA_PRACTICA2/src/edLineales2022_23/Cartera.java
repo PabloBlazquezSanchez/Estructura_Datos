@@ -1,4 +1,5 @@
 package edLineales2022_23;
+
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -7,36 +8,37 @@ import java.util.concurrent.LinkedBlockingQueue;
  * The Class Cartera.
  */
 public class Cartera {
-	
+
 	/** The cartera. */
 	Queue<Accion> cartera;// = new LinkedBlockingQueue<Acciones>(); //COLA CARTERA
-	int beneficio=0;
+	int beneficio = 0;
+
 	/**
 	 * Instantiates a new cartera.
 	 */
-	public Cartera() { //constr
+	public Cartera() { // constr
 		this.cartera = new LinkedBlockingQueue<Accion>();
 	}
-	
+
 	/** The totalaccionescartera. */
 	private int totalaccionescartera = 0;
-	
+
 	/**
- * Compraracciones.
- *
- * @param ID_prioridad the i D prioridad
- * @param preciocompra the preciocompra
- * @param accionescomprar the accionescomprar
- */
-public void compraracciones(int ID_prioridad, int preciocompra, int accionescomprar) {
-		Accion acciones= new Accion(ID_prioridad,preciocompra,accionescomprar);
-		cartera.add(acciones);//la cola es "cartera"
-		System.out.println("Size: "+cartera.size());
-		totalaccionescartera+=accionescomprar;
-		System.out.println("Total acciones: "+totalaccionescartera);
+	 * Compraracciones.
+	 *
+	 * @param ID_prioridad    the i D prioridad
+	 * @param preciocompra    the preciocompra
+	 * @param accionescomprar the accionescomprar
+	 */
+	public void compraracciones(int ID_prioridad, int preciocompra, int accionescomprar) {
+		Accion acciones = new Accion(ID_prioridad, preciocompra, accionescomprar);
+		cartera.add(acciones);// la cola es "cartera"
+		System.out.println("Size: " + cartera.size());
+		totalaccionescartera += accionescomprar;
+		System.out.println("Total acciones: " + totalaccionescartera);
 		System.out.println("Acciones añadidas correctamente.\n");
 	}
-	
+
 	/**
 	 * Para poder vender una acción, se pide el precio y nº acciones (variables locales)
 	 * de las acciones a vender (ambos datos pasan por un filtro de escritura). El precio servirá
@@ -60,7 +62,7 @@ public void compraracciones(int ID_prioridad, int preciocompra, int accionescomp
 		if (naccionesvender > totalaccionescartera) {
 			System.out.println("Error: Estás intentando vender más acciones de las que hay en la cartera de acciones.");
 		}
-		else {
+		else 
 			do {
 				Accion aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
 				if(aux.getNacciones()<=naccionesvender) {
@@ -68,22 +70,22 @@ public void compraracciones(int ID_prioridad, int preciocompra, int accionescomp
 					totalaccionescartera-=aux.getNacciones();
 					naccionesvender-=aux.getNacciones();
 					cartera.remove(aux);
-					System.out.println("Size: "+cartera.size());
-					venderacciones(naccionesvender,precioventa);
+					System.out.println(naccionesvender +"vender");
+					System.out.println(beneficio);
 				}
 				else {
-					totalaccionescartera-=naccionesvender;
+					beneficio+=((precioventa-aux.getPrecio())*naccionesvender);
+					System.out.println(precioventa+" " +aux.getPrecio()+" " + naccionesvender);
+					totalaccionescartera-=naccionesvender;			
+					naccionesvender=0;
+					System.out.println(naccionesvender);
 				}
-				beneficio+=((precioventa-aux.getPrecio())*naccionesvender);
-				naccionesvender-=aux.getNacciones();
-				System.out.println("Total acciones: "+totalaccionescartera);
-				System.out.println("Size: "+cartera.size());
 			} while(naccionesvender>0);
-		}
+		
 	}
-	
+
 	public int devolverbeneficio() {
 		return beneficio;
 	}
-	
+
 }
