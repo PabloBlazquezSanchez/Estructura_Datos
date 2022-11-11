@@ -21,14 +21,6 @@ public class Cartera {
 	/** The totalaccionescartera. */
 	private int totalaccionescartera = 0;
 	
-//	public void recorrercartera() {
-//		for (Acciones i : cartera) {
-//			Acciones aux=cartera.peek();
-//			totalaccionescartera+=aux.getNacciones();
-//			System.out.println(totalaccionescartera);
-//		}
-//	}
-	
 	/**
  * Compraracciones.
  *
@@ -64,18 +56,7 @@ public void compraracciones(int ID_prioridad, int preciocompra, int accionescomp
 	 */
 	
 	public void venderacciones(int naccionesvender, int precioventa) {
-		
-//		do {
-//			Acciones aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
-//			if(aux.getNacciones()<=naccionesvender) {
-//				naccionesvender-=aux.getNacciones();
-//				cartera.remove(aux);
-//			}
-//			else {
-//				naccionesvender-=aux.getNacciones();
-//			}
-//		} while(naccionesvender==0);
-		
+	
 		if (naccionesvender > totalaccionescartera) {
 			System.out.println("Error: Estás intentando vender más acciones de las que hay en la cartera de acciones.");
 		}
@@ -83,9 +64,9 @@ public void compraracciones(int ID_prioridad, int preciocompra, int accionescomp
 			do {
 				Accion aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
 				if(aux.getNacciones()<=naccionesvender) {
+					beneficio+=((precioventa-aux.getPrecio())*aux.getNacciones());
 					totalaccionescartera-=aux.getNacciones();
 					naccionesvender-=aux.getNacciones();
-					beneficio+=(precioventa-aux.getPrecio());
 					cartera.remove(aux);
 					System.out.println("Size: "+cartera.size());
 					venderacciones(naccionesvender,precioventa);
@@ -93,8 +74,8 @@ public void compraracciones(int ID_prioridad, int preciocompra, int accionescomp
 				else {
 					totalaccionescartera-=naccionesvender;
 				}
+				beneficio+=((precioventa-aux.getPrecio())*naccionesvender);
 				naccionesvender-=aux.getNacciones();
-				beneficio+=(precioventa-aux.getPrecio());
 				System.out.println("Total acciones: "+totalaccionescartera);
 				System.out.println("Size: "+cartera.size());
 			} while(naccionesvender>0);
