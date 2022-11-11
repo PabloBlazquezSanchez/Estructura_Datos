@@ -65,23 +65,26 @@ public class Cartera {
 		else 
 			do {
 				Accion aux=cartera.peek(); //variable auxiliar de tipo acciones. Es como un ""puntero""
+				int beneficio_parcial=0;
 				if(aux.getNacciones()<=naccionesvender) {
-					beneficio+=((precioventa-aux.getPrecio())*aux.getNacciones());
+					beneficio_parcial+=((precioventa-aux.getPrecio())*aux.getNacciones());
 					totalaccionescartera-=aux.getNacciones();
 					naccionesvender-=aux.getNacciones();
 					cartera.remove(aux);
 					System.out.println(naccionesvender +"vender");
-					System.out.println(beneficio);
+					System.out.println(beneficio_parcial);
 				}
 				else {
-					beneficio+=((precioventa-aux.getPrecio())*naccionesvender);
+					beneficio_parcial+=((precioventa-aux.getPrecio())*naccionesvender);
 					System.out.println(precioventa+" " +aux.getPrecio()+" " + naccionesvender);
-					totalaccionescartera-=naccionesvender;			
+					totalaccionescartera-=naccionesvender;
+					aux.setNacciones(aux.getNacciones()-naccionesvender);
+					//naccionesvender-=aux.getNacciones();
 					naccionesvender=0;
 					System.out.println(naccionesvender);
 				}
+				beneficio+=beneficio_parcial;
 			} while(naccionesvender>0);
-		
 	}
 
 	public int devolverbeneficio() {
