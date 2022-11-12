@@ -5,7 +5,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Cartera.
+ * Clase Cartera.
  */
 public class Cartera {
 
@@ -30,7 +30,7 @@ public class Cartera {
 	 * 
 	 * El método se encarga de crear (o comprar) una acción y añadirla a la cartera.
 	 *
-	 * Para poder comprar acciones, se crea una acción de tipo <Accion>, cuyos parámetros será el
+	 * Para poder comprar acciones, se crea una acción de tipo Accion, cuyos parámetros será el
 	 * ID de prioridad de cada elemento de la cola, el precio de compra por paquete de acciones
 	 * de la cartera y el número de acciones que se comprarán (introducir en un elemento de la Queue.
 	 * 

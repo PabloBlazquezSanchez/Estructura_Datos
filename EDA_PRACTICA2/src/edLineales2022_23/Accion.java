@@ -2,7 +2,7 @@ package edLineales2022_23;
 
 // TODO: Auto-generated Javadoc
 /**
- * Clase acción
+ * Clase Accion.
  */
 public class Accion {
 
