@@ -22,9 +22,9 @@ public class Accion {
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
 	 *
-	 * @param ID the id
-	 * @param precio the precio
-	 * @param nacciones the nacciones
+	 * @param ID el ID
+	 * @param precio el precio por acción
+	 * @param nacciones el número de acciones del paquete (elemento de la cola)
 	 */
 	public Accion(int ID,int precio,int nacciones){
 		this.precio=precio;
@@ -52,7 +52,7 @@ public class Accion {
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
 	 *
-	 * @param precio the new precio
+	 * @param precio el precio actualizado
 	 */
 	public void setPrecio(int precio) {
 		this.precio = precio;
@@ -65,7 +65,7 @@ public class Accion {
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
 	 *
-	 * @return the nacciones
+	 * @return el número de acciones
 	 */
 	public int getNacciones() {
 		return nacciones;
@@ -78,7 +78,7 @@ public class Accion {
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
 	 *
-	 * @param nacciones the new nacciones
+	 * @param nacciones el número de acciones actualizado
 	 */
 	public void setNacciones(int nacciones) {
 		this.nacciones = nacciones;
@@ -91,7 +91,7 @@ public class Accion {
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
 	 *
-	 * @return the id
+	 * @return el ID de prioridad
 	 */
 	public int getID() {
 		return ID;
@@ -104,7 +104,7 @@ public class Accion {
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la Cruz
 	 * @version 1.0
 	 *
-	 * @param iD the new id
+	 * @param iD el ID actualizado
 	 */
 	public void setID(int iD) {
 		ID = iD;

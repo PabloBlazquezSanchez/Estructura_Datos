@@ -11,20 +11,20 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class main{
 	
-	/** The id. */
+	/** El ID de prioridad de cada elemento de la cola cartera. */
 	static int ID = 0;
 	
-	/** The cartera. */
+	/** La cartera (objeto tipo cartera) */
 	static Cartera cartera = new Cartera();
 	
 	/** The beneficio. */
-	static int beneficio = 0;
+	//static int beneficio = 0;
 	
 	
 	/**
-	 * The main method.
-	 *
-	 * @param args the arguments
+	 * El método principal.
+	 * Está compuesto únicamente de un llamamiento a la función para mostrar el menú
+	 * @param args los argumentos
 	 */
 	public static void main(String[] args)  {
 	mostrarMenu();
@@ -32,11 +32,22 @@ public class main{
 	
 	/**
 	 * Mostrar menu.
+	 * 
+	 * Este método es una serie de "cases-switch", en el que cada opción (1-4) representará una función que hará
+	 * el programa. El caso default será un número no admitido y los carácteres no admitidos se tratan en el método
+	 * filtrarescritura().
+	 * 
+	 * El menú se ejecutará en bucle, y este terminará con la opción 4, que corresponde a salir del programa.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
+	 *         Cruz.
+	 * @version 1.0
 	 */
 	public static void mostrarMenu() {
 		int opcion = 0;
 		do {
-			System.out.println("Menú: \n" + "1. Comprar acciones\r\n"
+			System.out.println("Menú: \n"
+					+ "1. Comprar acciones\r\n"
 					+ "2. Vender acciones\r\n"
 					+ "3. Ganancia de capital hasta el momento\r\n"
 					+ "4. Salir\r\n"
