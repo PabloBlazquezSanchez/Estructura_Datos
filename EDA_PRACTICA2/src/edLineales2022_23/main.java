@@ -94,10 +94,13 @@ public class main {
 		int numero = 0;
 		Scanner lectura = new Scanner(System.in);
 		try {
-		do {
-			numero = lectura.nextInt();
-			if(numero<0) { System.out.println("Escribe un número entero positivo");} }while(numero<0);
-		
+			do {
+				numero = lectura.nextInt();
+				if (numero < 0) {
+					System.out.println("Escribe un número entero positivo");
+				}
+			} while (numero < 0);
+
 		} catch (InputMismatchException ime) { // Detecta si el dato introducido no es un número y lanza un mensaje de
 												// error
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
