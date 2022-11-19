@@ -15,7 +15,7 @@ public class Diccionario {
 
 	/**
 	 * 
-	 * Este método sirve para crear una variable de tipo Diccionario que contenga un
+	 * Este método sirve para crear un objeto de tipo Diccionario que contenga un
 	 * termino.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
@@ -28,7 +28,7 @@ public class Diccionario {
 
 	/**
 	 * 
-	 * Este método añade un término a la variable de tipo diccionario. Comprueba si
+	 * Este método añade un término al objeto de tipo diccionario. Comprueba si
 	 * el diccionario está vacío y si lo está añade el término. En caso contrario
 	 * comprueba si el término ya existe en el diccionario.
 	 * 
@@ -65,7 +65,7 @@ public class Diccionario {
 
 	/**
 	 * 
-	 * Este método elimina un término de la variable de tipo diccionario.
+	 * Este método elimina un término de un objeto de tipo diccionario.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
 	 *         Cruz
@@ -104,7 +104,7 @@ public class Diccionario {
 	/**
 	 * 
 	 * Este método muestra por pantalla la definición de un término introducido por
-	 * teclado y que, previamente, haya sido almacenado en la variable de tipo
+	 * teclado y que, previamente, haya sido almacenado en un objeto de tipo
 	 * diccionario.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la

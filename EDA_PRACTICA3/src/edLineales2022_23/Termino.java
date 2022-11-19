@@ -13,7 +13,7 @@ public class Termino {
 	private String nombre;
 
 	/**
-	 * Este método sirve para crear una variable de tipo Termino que contenga un
+	 * Este método sirve para crear un objeto de tipo Termino que contenga un
 	 * nombre y una definición.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
@@ -30,7 +30,7 @@ public class Termino {
 
 	/**
 	 * Este método devuelve el valor almacenado en la variable definicion, que a su
-	 * vez está almacenado en una variable de tipo Termino.
+	 * vez está almacenado en un objeto de tipo Termino.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
 	 *         Cruz
@@ -44,7 +44,7 @@ public class Termino {
 
 	/**
 	 * Este método modifica el valor almacenado en la variable definicion, que a su
-	 * vez está almacenado en una variable de tipo Termino.
+	 * vez está almacenado en un objeto de tipo Termino.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
 	 *         Cruz
@@ -58,7 +58,7 @@ public class Termino {
 
 	/**
 	 * Este método devuelve el valor almacenado en la variable nombre, que a su vez
-	 * está almacenado en una variable de tipo Termino.
+	 * está almacenado en un objeto de tipo Termino.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
 	 *         Cruz
@@ -72,7 +72,7 @@ public class Termino {
 
 	/**
 	 * Este método modifica el valor almacenado en la variable nombre, que a su vez
-	 * está almacenado en una variable de tipo Termino.
+	 * está almacenado en un objeto de tipo Termino.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
 	 *         Cruz

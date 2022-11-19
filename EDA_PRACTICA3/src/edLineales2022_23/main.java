@@ -83,7 +83,8 @@ public class main {
 	 * 
 	 * Este método captura el dato introducido por teclado y analiza si se ha
 	 * introducido un caracter o un número. Si se introduce un caracter lanza un
-	 * mensaje de error.
+	 * mensaje de error, a través de la excepción incluida en la API de Java "Input
+	 * Mismatch Exception".
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
 	 *         Cruz
@@ -109,7 +110,8 @@ public class main {
 	 * 
 	 * Este método captura el dato introducido por teclado y analiza si se ha
 	 * introducido un caracter o un número. Si se introduce un número lanza un
-	 * mensaje de error.
+	 * mensaje de error, a través de la excepción incluida en la API de Java "Input
+	 * Mismatch Exception".
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
 	 *         Cruz

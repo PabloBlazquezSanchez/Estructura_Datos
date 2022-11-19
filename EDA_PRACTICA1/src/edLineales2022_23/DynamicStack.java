@@ -17,9 +17,7 @@ public class DynamicStack<R> implements Stack<R> {
 	/* Estos dos atributos serviran para todo y lo unico que necesitamos */
 
 	/**
-	 * Crear el objeto Almacenamos el primer elemento de la pila. NOTA:
-	 * Usamos el constructor para asegurarnos que primero se refiere a null. En Java
-	 * no haría falta
+	 * Creamos el objeto pila dinámica. Usamos el constructor para asegurarnos que primero se refiere a null.
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jimenez de la
 	 *         Cruz.
 	 * @version 1.0
