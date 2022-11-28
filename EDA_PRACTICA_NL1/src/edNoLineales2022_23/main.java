@@ -63,18 +63,18 @@ public class main {
 		//Método que lee el fichero
 		private static void leerFichero2(String fichero) throws IOException, FileNotFoundException {
 		String origen, objetivo;
-		String peso;
+		int peso;
 		int contador=0;
 			String line;
 			try (BufferedReader br = new BufferedReader(new FileReader(fichero))) {
 				while ((line = br.readLine()) != null) {
-					String[] split = line.split(",(?=\\S)");
+					String texto= line.replaceAll("\"", "");
+					String[] split = texto.split(",(?=\\S)");
 					origen = split[0];
 					objetivo = split[1];
-					//peso = Integer.valueOf(split[2]);
-					peso=split[2];
+					peso = Integer.parseInt(split[2]);
 					contador++;
-					System.out.println(contador+ ".- Origen: "+origen+" Destino: "+ split[1]+ " Peso: "+peso);
+					System.out.println(contador+ ".- Origen: "+origen+" 			Destino: "+ split[1]+ " 		Peso: "+peso);
 				}
 			} catch(FileNotFoundException e) { //Si el fichero a buscar no existe lanza este mensaje de error y finaliza el programa
 				System.out.println("El fichero no existe en el directorio de búsqueda.\n"
