@@ -1,54 +1,73 @@
 package edNoLineales2022_23;
 
-public class Heroe {
-	
+import Grafo.Element;
+
+public class Heroe<E> implements Element {
+
 	private String nombreHeroe;
-	private String nombreHeroeRelacionado;
 	private int numInteracciones;
+	private boolean visitado;
+	private Heroe<E> parent;
+	private int distancia;
+	private E element;
 
-
-	public Heroe(String nombreHeroe, String nombreHeroeRelacionado, int numInteracciones) {
+	public Heroe(String nombreHeroe, E element) {
+		this.element = element;
 		this.nombreHeroe = nombreHeroe;
-		this.nombreHeroeRelacionado = nombreHeroeRelacionado;
-		this.numInteracciones = numInteracciones;
+		visitado = false;
+		parent = null;
+		distancia = 0;
+	}
+
+	
+	public String getID() {
+		return nombreHeroe.toString();
+	}
+
+	public void setNombre(String nombre) {
+		this.nombreHeroe = nombre;
+	}
+
+	
+	public void setVisited(boolean visited) {
+		this.visitado = visitado;
 	}
 
 
-	public int getNumInteracciones() {
-		return numInteracciones;
+	public boolean getVisited() {
+		return visitado;
 	}
 
 
-	public void setNumInteracciones(int numInteracciones) {
-		this.numInteracciones = numInteracciones;
+	public Heroe<E> getParent() {
+		return parent;
 	}
 
 
-	public String getNombreHeroe() {
-		return nombreHeroe;
+	public void setParent(Heroe<E> parent) {
+		this.parent = parent;
 	}
 
 
-	public void setNombreHeroe(String nombreHeroe) {
-		this.nombreHeroe = nombreHeroe;
+	public E getElement() {
+		return element;
+	}
+
+	public int getDistance() {
+		return distancia;
+	}
+
+	public void setDistance(int d) {
+		distancia = d;
 	}
 
 
-	public String getNombreHeroeRelacionado() {
-		return nombreHeroeRelacionado;
+	public boolean equals(Heroe n) {
+		return ((nombreHeroe.equals(n.getID())) && (element.equals(n.getElement())));
 	}
 
 
-	public void setNombreHeroeRelacionado(String nombreHeroeRelacionado) {
-		this.nombreHeroeRelacionado = nombreHeroeRelacionado;
-	}
-
-
-	@Override
 	public String toString() {
-		return "Héroe: " + nombreHeroe + " | Héroe relacionado: " + nombreHeroeRelacionado + 
-				" | Número de interacciones: " + numInteracciones;
+		return element.toString();
 	}
-
-
 }
