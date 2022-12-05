@@ -58,26 +58,30 @@ public class main {
 		Iterator<Vertex<Heroe<String>>> iterador = grafo.getVertices();
 		Vertex<Heroe<String>> vertice;
 		int maximo = 0;
-		int minimo = 0;
+		int minimo=0;
 		int grado = 0;
 		String heroe_minimo = "";
 		String heroe_maximo = "";
-
 		while (iterador.hasNext()) {
 			vertice = iterador.next();
 			grado = grado(grafo, vertice);
+			
+			if(minimo==0) {
+				minimo=grado;
+			}
 			if (grado > maximo) {
 				maximo = grado;
 				heroe_maximo = vertice.getID();
-			} else {
+			} 
+		
+			if (grado <= minimo) {
 				minimo = grado;
 				heroe_minimo = vertice.getID();
 			}
 		}
 
 		System.out.println(heroe_maximo + " es el héroe que más trabaja en equipo con " + maximo + " interacciones.");
-		System.out
-				.println(heroe_minimo + " es el héroe que menos trabaja en equipo con " + minimo + " interacciones.\n");
+		System.out.println(heroe_minimo + " es el héroe que menos trabaja en equipo con " + minimo + " interacciones.\n");
 
 	}
 
