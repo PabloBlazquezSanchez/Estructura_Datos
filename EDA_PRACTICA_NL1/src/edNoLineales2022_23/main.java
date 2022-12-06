@@ -4,8 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -13,6 +16,7 @@ import Grafo.Edge;
 import Grafo.Graph;
 import Grafo.TreeMapGraph;
 import Grafo.Vertex;
+import edLineales2022_23.Termino;
 
 public class main {
 	static TreeMapGraph<Heroe<String>, Relacion> grafo = new TreeMapGraph<Heroe<String>, Relacion>();
@@ -60,29 +64,40 @@ public class main {
 		int maximo = 0;
 		int minimo=0;
 		int grado = 0;
-		String heroe_minimo = "";
-		String heroe_maximo = "";
+		List<Vertex<Heroe<String>>> heroes_maximo= new LinkedList<Vertex<Heroe<String>>>();
+		List<Vertex<Heroe<String>>> heroes_minimo= new LinkedList<Vertex<Heroe<String>>>();
+		
 		while (iterador.hasNext()) {
 			vertice = iterador.next();
 			grado = grado(grafo, vertice);
-			
+
 			if(minimo==0) {
 				minimo=grado;
 			}
 			if (grado > maximo) {
 				maximo = grado;
-				heroe_maximo = vertice.getID();
-			} 
-		
-			if (grado <= minimo) {
+				heroes_maximo.clear();
+
+			} if (grado==maximo) {
+				heroes_maximo.add(vertice);
+			}
+	
+			if (grado < minimo) {
 				minimo = grado;
-				heroe_minimo = vertice.getID();
+				heroes_minimo.clear();
+
+			}if (grado==minimo) {
+				heroes_minimo.add(vertice);
 			}
 		}
-
-		System.out.println(heroe_maximo + " es el héroe que más trabaja en equipo con " + maximo + " interacciones.");
-		System.out.println(heroe_minimo + " es el héroe que menos trabaja en equipo con " + minimo + " interacciones.\n");
-
+		
+		for (Vertex<Heroe<String>> element : heroes_maximo) {
+			System.out.println(element.getID() + " es el héroe que menos trabaja en equipo con " + maximo + " interacciones.");
+		}
+		
+		for (Vertex<Heroe<String>> element : heroes_minimo) {
+			System.out.println(element.getID() + " es el héroe que menos trabaja en equipo con " + minimo + " interacciones.");}
+			
 	}
 
 	public static int grado(Graph<Heroe<String>, Relacion> g, Vertex<Heroe<String>> v) {
