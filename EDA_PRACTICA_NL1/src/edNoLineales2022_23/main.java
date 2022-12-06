@@ -62,42 +62,47 @@ public class main {
 		Iterator<Vertex<Heroe<String>>> iterador = grafo.getVertices();
 		Vertex<Heroe<String>> vertice;
 		int maximo = 0;
-		int minimo=0;
+		int minimo = 0;
 		int grado = 0;
-		List<Vertex<Heroe<String>>> heroes_maximo= new LinkedList<Vertex<Heroe<String>>>();
-		List<Vertex<Heroe<String>>> heroes_minimo= new LinkedList<Vertex<Heroe<String>>>();
-		
+		List<Vertex<Heroe<String>>> heroes_maximo = new LinkedList<Vertex<Heroe<String>>>();
+		List<Vertex<Heroe<String>>> heroes_minimo = new LinkedList<Vertex<Heroe<String>>>();
+
 		while (iterador.hasNext()) {
 			vertice = iterador.next();
 			grado = grado(grafo, vertice);
 
-			if(minimo==0) {
-				minimo=grado;
+			if (minimo == 0) {
+				minimo = grado;
 			}
 			if (grado > maximo) {
 				maximo = grado;
 				heroes_maximo.clear();
 
-			} if (grado==maximo) {
+			}
+			if (grado == maximo) {
 				heroes_maximo.add(vertice);
 			}
-	
+
 			if (grado < minimo) {
 				minimo = grado;
 				heroes_minimo.clear();
 
-			}if (grado==minimo) {
+			}
+			if (grado == minimo) {
 				heroes_minimo.add(vertice);
 			}
 		}
-		
+
 		for (Vertex<Heroe<String>> element : heroes_maximo) {
-			System.out.println(element.getID() + " es el héroe que menos trabaja en equipo con " + maximo + " interacciones.");
+			System.out.println(
+					element.getID() + " es el héroe que más trabaja en equipo con " + maximo + " interacciones.");
 		}
-		
+
 		for (Vertex<Heroe<String>> element : heroes_minimo) {
-			System.out.println(element.getID() + " es el héroe que menos trabaja en equipo con " + minimo + " interacciones.");}
-			
+			System.out.println(
+					element.getID() + " es el héroe que menos trabaja en equipo con " + minimo + " interacciones.");
+		}
+
 	}
 
 	public static int grado(Graph<Heroe<String>, Relacion> g, Vertex<Heroe<String>> v) {
@@ -140,9 +145,6 @@ public class main {
 				origen = split[0];
 				objetivo = split[1];
 				peso = Integer.parseInt(split[2]);
-
-				System.out.println(
-						contador + ".- Origen: " + origen + " 			Destino: " + split[1] + " 		Peso: " + peso);
 
 				Relacion relacion = new Relacion(contador, peso);
 
