@@ -16,7 +16,6 @@ import Grafo.Edge;
 import Grafo.Graph;
 import Grafo.TreeMapGraph;
 import Grafo.Vertex;
-import edLineales2022_23.Termino;
 
 public class main {
 	static TreeMapGraph<Heroe<String>, Relacion> grafo = new TreeMapGraph<Heroe<String>, Relacion>();
