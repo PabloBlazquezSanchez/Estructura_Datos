@@ -32,7 +32,7 @@ public class main {
 		do {
 			System.out.println("Menú: \n"
 					+ "1. Mostrar el número de personajes, el número total de relaciones entre personajes, el personaje más sociable y el personaje que menos trabaja en equipo.\n"
-					+ "2. GRAFO.\n" + "3. GRAFO.\n" + "4. Salir\r\n"
+					+ "2. Camino corto.\n" + "3. GRAFO.\n" + "4. Salir\r\n"
 					+ "Escriba el número de la opción que desea realizar:\n");
 			opcion = (int) filtrarEscritura();
 			switch (opcion) {
@@ -40,6 +40,7 @@ public class main {
 				mostrarDatos(grafo);
 				break;
 			case 2:
+				ComprobarEsquinasBFS(grafo);
 				break;
 			case 3:
 				break;
@@ -163,4 +164,26 @@ public class main {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void ComprobarEsquinasBFS(Graph<Heroe<String>, Relacion> gr) {
+		Scanner leer_vertex=new Scanner(System.in);
+		System.out.println("Esquina 1: ");
+		String a = leer_vertex.nextLine(); //leo toda la linea!!!
+		System.out.println("Esquina 2: ");
+		String b = leer_vertex.nextLine();
+		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a);
+		Vertex<Heroe<String>> vertice_2 = gr.getVertex(b);
+		if(vertice_1==null || vertice_2==null) System.err.println("Alguno de los heroes no existen.");
+		else BFS(gr,vertice_1,vertice_2);
+	}
+	
+	/*Metodo BFS apartado 2*/
+	
+	public static void BFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> vertice_1, Vertex<Heroe<String>> vertice_2/*grafo G y vertices v1 y v2*/) {
+		//Le pasamos el string del nombre del vertice, este metodo luego busca el/los vertice(s) correspondiente(s)
+		
+		System.out.println("Tenemos de vertices"+vertice_1.getID()+" y "+vertice_2.getID());
+		System.exit(0);
+	}
+	
 }
