@@ -4,13 +4,13 @@ import Grafo.Element;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Relacion.
+ * Clase Relacion
  *
- * @param <E> the element type
+ * @param <E> tipo generico "E"
  */
 public class Relacion<E> implements Element {
 
-	/** The n lineas. */
+	/** numero de lineas de la relacion */
 	private Integer nLineas;
 
 	/** The peso. */
