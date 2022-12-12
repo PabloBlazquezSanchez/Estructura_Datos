@@ -4,35 +4,53 @@ import Grafo.Element;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Heroe.
+ * Clase donde se implementa el elemento Heroe
  *
  * @param <E> the element type
  */
 public class Heroe<E> implements Element {
 
-	/** The nombre heroe. */
+	/**
+	 * Variable String nombreHeroe. Esta variable va a guardar el nombre del héroe.
+	 */
 	private String nombreHeroe;
-	
-	/** The num interacciones. */
+
+	/**
+	 * Variable entera numInteracciones.
+	 * Esta variable guarda el número de interacciones entre un héroe y otro.
+	 */
 	private int numInteracciones;
-	
-	/** The visitado. */
+
+	/**
+	 * Variable booleana Visitado.
+	 * Esta variable guarda si se ha visitado el héroe o no.
+	 */
 	private boolean visitado;
-	
-	/** The parent. */
+
+	/**
+	 * Variable de tipo Heroe genérica parent.
+	 * Esta variable guarda el antecesor del héroe.
+	 */
 	private Heroe<E> parent;
-	
-	/** The distancia. */
+
+	/**
+	 * Variable entera distancia.
+	 * Esta variable guarda la distancia que existe entre un héroe y otro.
+	 */
 	private int distancia;
-	
-	/** The element. */
+
+	/**
+	 * Variable genérica elemento.
+	 * Elemento genérico.
+	 */
 	private E element;
 
 	/**
-	 * Instantiates a new heroe.
+	 * Este es el método constructor que sirve para crear un objeto de tipo Heroe que contenga un nombre y
+	 * un elemento genérico.
 	 *
 	 * @param nombreHeroe the nombre heroe
-	 * @param element the element
+	 * @param element     the element
 	 */
 	public Heroe(String nombreHeroe, E element) {
 		this.element = element;
@@ -43,7 +61,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Gets the id.
+	 * Este método devuelve el valor ID almacenado en la variable nombreHeroe, que a su vez
+	 * está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @return the id
 	 */
@@ -52,7 +71,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Sets the nombre.
+	 * Este método modifica el valor almacenado en la variable nombreHeroe, que a su
+	 * vez está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @param nombre the new nombre
 	 */
@@ -61,7 +81,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Sets the visited.
+	 * Este método modifica el valor almacenado en la variable visitado, que a su
+	 * vez está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @param visited the new visited
 	 */
@@ -70,7 +91,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Gets the visited.
+	 * Este método devuelve el valor almacenado en la variable visitado, que a su vez
+	 * está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @return the visited
 	 */
@@ -79,7 +101,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Gets the parent.
+	 * Este método devuelve el valor almacenado en la variable parent, que a su vez
+	 * está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @return the parent
 	 */
@@ -88,7 +111,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Sets the parent.
+	 * Este método modifica el valor almacenado en la variable parent, que a su
+	 * vez está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @param parent the new parent
 	 */
@@ -97,7 +121,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Gets the element.
+	 * Este método devuelve el valor almacenado en la variable genérica element, que a su vez
+	 * está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @return the element
 	 */
@@ -106,7 +131,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Gets the distance.
+	 * Este método devuelve el valor almacenado en la variable distancia, que a su vez
+	 * está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @return the distance
 	 */
@@ -115,7 +141,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Sets the distance.
+	 * Este método modifica el valor almacenado en la variable distancia, que a su
+	 * vez está almacenado en un objeto de tipo Heroe.
 	 *
 	 * @param d the new distance
 	 */
@@ -124,7 +151,7 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Equals.
+	 * Este método compara si dos nombres y dos elementos son iguales.
 	 *
 	 * @param n the n
 	 * @return true, if successful
