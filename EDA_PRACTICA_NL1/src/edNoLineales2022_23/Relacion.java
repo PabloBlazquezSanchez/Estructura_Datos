@@ -2,25 +2,24 @@ package edNoLineales2022_23;
 
 import Grafo.Element;
 
-// TODO: Auto-generated Javadoc
 /**
- * Clase Relacion
- *
+ * Esta clase guarda las interacciones entre personajes.
+ * 
  * @param <E> tipo generico "E"
  */
 public class Relacion<E> implements Element {
 
-	/** numero de lineas de la relacion */
+	/** Es un Integer que será usado como llave para el vértice o arista.*/
 	private Integer nLineas;
 
-	/** The peso. */
+	/** Es un int que representa el peso de la relación que hay entre dos héroes*/
 	private int peso;
 
 	/**
-	 * Instantiates a new relacion.
-	 *
-	 * @param n the n
-	 * @param p the p
+	 * Es el método constructor que nos permite crear el objeto Relación a partir del peso y el ID
+	 * 
+	 * @param n El ID
+	 * @param p El peso de la relación
 	 */
 	public Relacion(int n, int p) {
 		nLineas = n;
@@ -28,18 +27,19 @@ public class Relacion<E> implements Element {
 	}
 
 	/**
-	 * Gets the peso.
-	 *
-	 * @return the peso
+	 * Método que devuelve el peso de las interacciones entre héroes.
+	 * 
+	 * @return peso
 	 */
 	public int getPeso() {
 		return peso;
 	}
 
 	/**
-	 * Gets the id.
-	 *
-	 * @return the id
+	 * Método que devuelve el número ID que nos permite identificar la relación
+	 * entre héroes.
+	 * 
+	 * @return nLineas
 	 */
 	public String getID() {
 		return nLineas.toString();
