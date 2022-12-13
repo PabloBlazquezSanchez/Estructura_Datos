@@ -181,7 +181,7 @@ public class main {
 //			boolean b1 = true, b2 = true;
 //			Vertex<Heroe<String>> aux, w1 = null, w2 = null;
 //		    Stack <Heroe<String>> stack = new Stack();
-//		    
+//		    /*bucle para imprimir y llamar*/
 			algoritmoBFS(gr,vertice_1,vertice_2);
 		}	
 	}
