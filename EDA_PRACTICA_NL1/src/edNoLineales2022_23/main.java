@@ -183,6 +183,8 @@ public class main {
 //		    Stack <Heroe<String>> stack = new Stack();
 //		    /*bucle para imprimir y llamar*/
 			algoritmoBFS(gr,vertice_1,vertice_2);
+			//imprimiendo, guardando en la pila...
+			//ya tengo el elemento decorado, asi que me salto gran parte del proceso
 		}	
 	}
 	
