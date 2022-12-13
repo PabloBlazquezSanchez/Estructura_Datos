@@ -4,13 +4,14 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+//import java.util.ArrayList;
+//import java.util.InputMismatchException;
+//import java.util.Iterator;
+//import java.util.LinkedList;
+//import java.util.List;
+//import java.util.Scanner;
+//import java.util.StringTokenizer;
+import java.util.*;
 
 import Grafo.Edge;
 import Grafo.Graph;
@@ -32,7 +33,7 @@ public class main {
 		do {
 			System.out.println("Menú: \n"
 					+ "1. Mostrar el número de personajes, el número total de relaciones entre personajes, el personaje más sociable y el personaje que menos trabaja en equipo.\n"
-					+ "2. Camino corto.\n" + "3. GRAFO.\n" + "4. Salir\r\n"
+					+ "2. Camino corto mediante BFS.\n" + "3. GRAFO.\n" + "4. Salir\r\n"
 					+ "Escriba el número de la opción que desea realizar:\n");
 			opcion = (int) filtrarEscritura();
 			switch (opcion) {
@@ -174,16 +175,51 @@ public class main {
 		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a);
 		Vertex<Heroe<String>> vertice_2 = gr.getVertex(b);
 		if(vertice_1==null || vertice_2==null) System.err.println("Alguno de los heroes no existen.");
-		else BFS(gr,vertice_1,vertice_2);
+		else{
+//			Iterator<Vertex<Heroe<String>>> i;
+//			int peso;
+//			boolean b1 = true, b2 = true;
+//			Vertex<Heroe<String>> aux, w1 = null, w2 = null;
+//		    Stack <Heroe<String>> stack = new Stack();
+//		    
+			algoritmoBFS(gr,vertice_1,vertice_2);
+		}	
 	}
 	
 	/*Metodo BFS apartado 2*/
 	
-	public static void BFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> vertice_1, Vertex<Heroe<String>> vertice_2/*grafo G y vertices v1 y v2*/) {
+	public static Heroe<String> algoritmoBFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1, Vertex<Heroe<String>> v2/*grafo G y vertices v1 y v2*/) {
 		//Le pasamos el string del nombre del vertice, este metodo luego busca el/los vertice(s) correspondiente(s)
 		
-		System.out.println("Tenemos de vertices"+vertice_1.getID()+" y "+vertice_2.getID());
-		System.exit(0);
+		System.out.println("Tenemos de vertices"+v1.getID()+" y "+v2.getID());		
+		Queue<Vertex<Heroe<String>>> q = new LinkedList();
+		boolean notermina = true;
+		Vertex<Heroe<String>> w1, w2 = null;
+		Edge<Relacion> r;
+		Iterator<Edge<Relacion>> i;
+		
+		v1.getElement().setVisited(true);
+	    q.offer(v1);
+	    
+	    while (!q.isEmpty() && notermina) {
+	      w1 = q.poll();
+	      i = gr.incidentEdges(w1);
+	      
+	      while (i.hasNext() && notermina) {
+	        r = i.next();
+	        w2 = gr.opposite(w1, r);
+	        
+	        if (!(w2.getElement()).getVisited()) {
+	          (w2.getElement()).setVisited(true);
+	          (w2.getElement()).setParent(w1.getElement());
+	          (w2.getElement()).setDistance(((w1.getElement()).getDistance()) + 1);
+	          q.offer(w2);
+	          notermina = !(w2.getElement().equals(v2.getElement()));
+	        }
+	      }
+	    }
+	    
+	    if (notermina) w2.getElement().setParent(null);
+	    return w2.getElement();
 	}
-	
 }
