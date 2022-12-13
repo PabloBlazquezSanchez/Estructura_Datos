@@ -172,39 +172,46 @@ public class main {
 		String a = leer_vertex.nextLine(); //leo toda la linea!!!
 		System.out.println("Esquina 2: ");
 		String b = leer_vertex.nextLine();
+		
+		Stack<Vertex<Heroe<String>>> st = new Stack();
 		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a);
 		Vertex<Heroe<String>> vertice_2 = gr.getVertex(b);
 		if(vertice_1==null || vertice_2==null) System.err.println("Alguno de los heroes no existen.");
 		else{
-//			Iterator<Vertex<Heroe<String>>> i;
-//			int peso;
-//			boolean b1 = true, b2 = true;
-//			Vertex<Heroe<String>> aux, w1 = null, w2 = null;
-//		    Stack <Heroe<String>> stack = new Stack();
-//		    /*bucle para imprimir y llamar*/
-			algoritmoBFS(gr,vertice_1,vertice_2);
-			//imprimiendo, guardando en la pila...
+			System.out.println("\nPath");
+			st = algoritmoBFS(gr,vertice_1,vertice_2);
+			long peso=st.size();
+			//relleno una stack con el recorrido final, invirtiendo la primera
+			Stack<Vertex<Heroe<String>>> camino = new Stack();
+			for (int i=0; i < peso; i++) {
+				camino.push(st.pop());
+			}
+			for (int i=0; i < peso-1; i++) {
+				Vertex<Heroe<String>> paso = camino.pop();
+				System.out.print(paso.getElement().getnombreHeroe()+" - ");
+			}
+			Vertex<Heroe<String>> paso_final = camino.pop();
+			System.out.print(paso_final.getElement().getnombreHeroe()+".\n");
 			//ya tengo el elemento decorado, asi que me salto gran parte del proceso
 		}	
 	}
 	
 	/*Metodo BFS apartado 2*/
-	
-	public static Heroe<String> algoritmoBFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1, Vertex<Heroe<String>> v2/*grafo G y vertices v1 y v2*/) {
+	public static Stack<Vertex<Heroe<String>>> algoritmoBFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1, Vertex<Heroe<String>> v2/*grafo G y vertices v1 y v2*/) {
 		//Le pasamos el string del nombre del vertice, este metodo luego busca el/los vertice(s) correspondiente(s)
 		
 		System.out.println("Tenemos de vertices"+v1.getID()+" y "+v2.getID());		
-		Queue<Vertex<Heroe<String>>> q = new LinkedList();
+		Stack<Vertex<Heroe<String>>> s = new Stack();
 		boolean notermina = true;
 		Vertex<Heroe<String>> w1, w2 = null;
 		Edge<Relacion> r;
 		Iterator<Edge<Relacion>> i;
 		
 		v1.getElement().setVisited(true);
-	    q.offer(v1);
+	    s.push(v1);
 	    
-	    while (!q.isEmpty() && notermina) {
-	      w1 = q.poll();
+	    while (!s.isEmpty() && notermina) {
+	      w1 = s.pop();
 	      i = gr.incidentEdges(w1);
 	      
 	      while (i.hasNext() && notermina) {
@@ -215,13 +222,14 @@ public class main {
 	          (w2.getElement()).setVisited(true);
 	          (w2.getElement()).setParent(w1.getElement());
 	          (w2.getElement()).setDistance(((w1.getElement()).getDistance()) + 1);
-	          q.offer(w2);
+	          s.push(w2);
 	          notermina = !(w2.getElement().equals(v2.getElement()));
 	        }
 	      }
 	    }
 	    
 	    if (notermina) w2.getElement().setParent(null);
-	    return w2.getElement();
+	    //return w2.getElement();
+	    return s;
 	}
 }

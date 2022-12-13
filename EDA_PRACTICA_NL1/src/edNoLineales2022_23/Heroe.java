@@ -168,4 +168,8 @@ public class Heroe<E> implements Element {
 	public String toString() {
 		return element.toString();
 	}
+	
+	public String getnombreHeroe() {
+		return nombreHeroe;
+	}
 }
