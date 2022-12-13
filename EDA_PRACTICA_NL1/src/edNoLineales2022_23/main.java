@@ -178,6 +178,7 @@ public class main {
 			long peso = st.size();
 			// relleno una stack con el recorrido final, invirtiendo la primera
 			Stack<Vertex<Heroe<String>>> camino = new Stack();
+			System.out.print(gr.getVertex(a).getElement().getnombreHeroe() + " - ");
 			for (int i = 0; i < peso; i++) {
 				camino.push(st.pop());
 			}
@@ -248,6 +249,7 @@ public class main {
 					st.push(sr.pop()); // con esto obtenemos el camino (equipo) en orden (de A a B). Igual que BFS
 				System.out.println(
 						"\nEl equipo que formamos con " + vertice_1.getID() + " y " + vertice_2.getID() + " es:\n");
+
 				while (!st.isEmpty()) {
 					equipo = gr.endVertices(st.pop());
 					System.out.print(equipo[0].getElement().toString() + "-");
