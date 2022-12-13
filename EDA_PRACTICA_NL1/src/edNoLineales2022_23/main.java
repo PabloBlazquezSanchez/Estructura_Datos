@@ -15,7 +15,6 @@ public class main {
 	static TreeMapGraph<Heroe<String>, Relacion> grafo = new TreeMapGraph<Heroe<String>, Relacion>();
 ////////// PREGUNTAR Se valorará que la búsqueda de caminos se pueda repetir a indicación del usuario. ///////
 	public static void main(String[] args) throws IOException, FileNotFoundException {
-
 		leerFichero2("marvel-unimodal-edges.csv", grafo);
 		mostrarMenu();
 	}
@@ -34,10 +33,10 @@ public class main {
 				mostrarDatos(grafo);
 				break;
 			case 2:
-				ComprobarEsquinasBFS(grafo);
+				ComprobarVerticesBFS(grafo);
 				break;
 			case 3:
-				ComprobarEsquinasDFS(grafo);
+				ComprobarVerticesDFS(grafo);
 				break;
 			case 4:
 				break;
@@ -160,7 +159,7 @@ public class main {
 		}
 	}
 
-	public static void ComprobarEsquinasBFS(Graph<Heroe<String>, Relacion> gr) {
+	public static void ComprobarVerticesBFS(Graph<Heroe<String>, Relacion> gr) {
 		Scanner leer_vertex = new Scanner(System.in);
 		System.out.println("Escribe el nombre del héroe desde el que hay que partir:");
 		String a = leer_vertex.nextLine(); // leo toda la linea!!!
@@ -230,7 +229,7 @@ public class main {
 		return s;
 	}
 
-	public static void ComprobarEsquinasDFS(Graph<Heroe<String>, Relacion> gr) {
+	public static void ComprobarVerticesDFS(Graph<Heroe<String>, Relacion> gr) {
 		Scanner leer_vertex = new Scanner(System.in);
 		System.out.println("Escribe el nombre del héroe desde el que hay que partir:");
 		String a = leer_vertex.nextLine(); // leo toda la linea!!!
@@ -265,7 +264,7 @@ public class main {
 		boolean noEnd = !v1.equals(v2);
 		Edge<Relacion> r;
 		Iterator<Edge<Relacion>> i;
-		Vertex<Heroe<String>> w1;
+		Vertex<Heroe<String>> w1,w2=v2;
 
 		v1.getElement().setVisited(true);
 		i = gr.incidentEdges(v1);
@@ -275,10 +274,9 @@ public class main {
 			if (!w1.getElement().getVisited()) {
 				st.push(r);
 				System.out.println(r.getElement().getPeso()+" \n");
-				if (r.getElement().getPeso() <= 10) { /* peso de la arista es hasta 10 */
-					noEnd = algoritmoDFS(gr, w1, v2, st);
+				if (r.getElement().getPeso() <= 100) { /* peso de la arista es hasta 10 */
+					noEnd = algoritmoDFS(gr, w2, v2, st);
 				}		
-				
 				
 				if (noEnd) {
 					st.pop();
