@@ -13,34 +13,32 @@ import Grafo.Vertex;
 
 public class main {
 	static TreeMapGraph<Heroe<String>, Relacion> grafo = new TreeMapGraph<Heroe<String>, Relacion>();
-////////// PREGUNTAR Se valorará que la búsqueda de caminos se pueda repetir a indicación del usuario. ///////
 	public static void main(String[] args) throws IOException, FileNotFoundException {
 		leerFichero2("marvel-unimodal-edges.csv", grafo);
 		mostrarMenu();
 	}
 
-	// Método menú
 	public static void mostrarMenu() {
 		int opcion = 0;
 		do {
 			System.out.println("Menú: \n"
 					+ "1. Mostrar el número de personajes, el número total de relaciones entre personajes, el personaje más sociable y el personaje que menos trabaja en equipo.\n"
-					+ "2. Determinar la secuencia más corta de personajes que conecte a dos personajes dados.\n" + "3. Equipo.\n" + "4. Salir\r\n"
-					+ "Escriba el número de la opción que desea realizar:\n");
+					+ "2. Determinar la secuencia más corta de personajes que conecte a dos personajes dados.\n"
+					+ "3. Diseñar un equipo de personajes formado a partir de dos personajes teniendo en cuenta que el número de interacciones entre ellos en el camino no sea superior a 10.\n"
+					+ "4. Salir\r\n" + "Escriba el número de la opción que desea realizar:");
 			opcion = (int) filtrarEscritura();
 			switch (opcion) {
 			case 1:
+				limpiarGrafo(grafo);
 				mostrarDatos(grafo);
 				break;
 			case 2:
+				limpiarGrafo(grafo);
 				ComprobarVerticesBFS(grafo);
 				break;
 			case 3:
+				limpiarGrafo(grafo);
 				ComprobarVerticesDFS(grafo);
-				break;
-			case 4:
-				break;
-			case 5:
 				break;
 			default:
 				System.out.println("Error. Vuelva a escribir la opción otra vez.\n");
@@ -170,8 +168,8 @@ public class main {
 		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a);
 		Vertex<Heroe<String>> vertice_2 = gr.getVertex(b);
 		if (vertice_1 == null || vertice_2 == null) {
-			System.err.println("Alguno de los héroes introducidos no existen.");}
-		else {
+			System.err.println("Alguno de los héroes introducidos no existen.");
+		} else {
 			System.out.println("\nPath");
 			st = algoritmoBFS(gr, vertice_1, vertice_2);
 			long peso = st.size();
@@ -239,7 +237,7 @@ public class main {
 		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a);
 		Vertex<Heroe<String>> vertice_2 = gr.getVertex(b);
 		if (vertice_1 == null || vertice_2 == null)
-			System.err.println("Alguno de los héroes no existen.");
+			System.err.println("Los datos introducidos son erróneos.");
 		else {
 			Vertex<Heroe<String>>[] equipo;
 			boolean noCaminoExistente = algoritmoDFS(gr, vertice_1, vertice_2, sr);
@@ -260,11 +258,11 @@ public class main {
 	}
 
 	public static boolean algoritmoDFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1,
-		Vertex<Heroe<String>> v2, Stack<Edge<Relacion>> st) {
+			Vertex<Heroe<String>> v2, Stack<Edge<Relacion>> st) {
 		boolean noEnd = !v1.equals(v2);
 		Edge<Relacion> r;
 		Iterator<Edge<Relacion>> i;
-		Vertex<Heroe<String>> w1,w2=v2;
+		Vertex<Heroe<String>> w1, w2 = v2;
 
 		v1.getElement().setVisited(true);
 		i = gr.incidentEdges(v1);
@@ -273,16 +271,25 @@ public class main {
 			w1 = gr.opposite(v1, r);
 			if (!w1.getElement().getVisited()) {
 				st.push(r);
-				System.out.println(r.getElement().getPeso()+" \n");
-				if (r.getElement().getPeso() <= 100) { /* peso de la arista es hasta 10 */
+				System.out.println(r.getElement().getPeso() + " \n");
+				if (r.getElement().getPeso() <= 10) { /* peso de la arista es hasta 10 */
 					noEnd = algoritmoDFS(gr, w2, v2, st);
-				}		
-				
+				}
+
 				if (noEnd) {
 					st.pop();
 				}
 			}
 		}
 		return noEnd;
+	}
+
+	public static void limpiarGrafo(TreeMapGraph<Heroe<String>, Relacion> grafo) {
+		Iterator<Vertex<Heroe<String>>> iterador = grafo.getVertices();
+		Vertex<Heroe<String>> vertice;
+		while (iterador.hasNext()) {
+			vertice = iterador.next();
+			vertice.getElement().setVisited(false);
+		}
 	}
 }
