@@ -11,13 +11,29 @@ import Grafo.Graph;
 import Grafo.TreeMapGraph;
 import Grafo.Vertex;
 
+/**
+ * The Class main.
+ */
 public class main {
+	
+	/** The grafo. */
 	static TreeMapGraph<Heroe<String>, Relacion> grafo = new TreeMapGraph<Heroe<String>, Relacion>();
+	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws FileNotFoundException the file not found exception
+	 */
 	public static void main(String[] args) throws IOException, FileNotFoundException {
 		leerFichero2("marvel-unimodal-edges.csv", grafo);
 		mostrarMenu();
 	}
 
+	/**
+	 * Mostrar menu.
+	 */
 	public static void mostrarMenu() {
 		int opcion = 0;
 		do {
@@ -48,6 +64,11 @@ public class main {
 
 	}
 
+	/**
+	 * Mostrar datos.
+	 *
+	 * @param grafo the grafo
+	 */
 	private static void mostrarDatos(TreeMapGraph<Heroe<String>, Relacion> grafo) {
 		System.out.println(
 				"El numero de relaciones es " + grafo.getM() + " y el numero de personajes es " + grafo.getN() + ".");
@@ -97,6 +118,13 @@ public class main {
 
 	}
 
+	/**
+	 * Grado.
+	 *
+	 * @param g the g
+	 * @param v the v
+	 * @return the int
+	 */
 	public static int grado(Graph<Heroe<String>, Relacion> g, Vertex<Heroe<String>> v) {
 		Iterator<Edge<Relacion>> iterador;
 		int k = 0;
@@ -109,6 +137,11 @@ public class main {
 	}
 
 	// Método que captura el dato introducido por teclado y comprueba si es un
+	/**
+	 * Filtrar escritura.
+	 *
+	 * @return the long
+	 */
 	// número o un carácter
 	public static long filtrarEscritura() {
 		long numero = 0;
@@ -123,6 +156,14 @@ public class main {
 		return numero;
 	}
 
+	/**
+	 * Leer fichero 2.
+	 *
+	 * @param fichero the fichero
+	 * @param grafo the grafo
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws FileNotFoundException the file not found exception
+	 */
 	// Método que lee el fichero
 	private static void leerFichero2(String fichero, TreeMapGraph<Heroe<String>, Relacion> grafo)
 			throws IOException, FileNotFoundException {
@@ -157,6 +198,11 @@ public class main {
 		}
 	}
 
+	/**
+	 * Comprobar vertices BFS.
+	 *
+	 * @param gr the gr
+	 */
 	public static void ComprobarVerticesBFS(Graph<Heroe<String>, Relacion> gr) {
 		Scanner leer_vertex = new Scanner(System.in);
 		System.out.println("Escribe el nombre del héroe desde el que hay que partir:");
@@ -189,6 +235,14 @@ public class main {
 		}
 	}
 
+	/**
+	 * Algoritmo BFS.
+	 *
+	 * @param gr the gr
+	 * @param v1 the v 1
+	 * @param v2 the v 2
+	 * @return the stack
+	 */
 	/* Recorrido BFS apartado 2 */
 	public static Stack<Vertex<Heroe<String>>> algoritmoBFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1,
 			Vertex<Heroe<String>> v2/* grafo G y vertices v1 y v2 */) {
@@ -227,6 +281,11 @@ public class main {
 		return s;
 	}
 
+	/**
+	 * Comprobar vertices DFS.
+	 *
+	 * @param gr the gr
+	 */
 	public static void ComprobarVerticesDFS(Graph<Heroe<String>, Relacion> gr) {
 		Scanner leer_vertex = new Scanner(System.in);
 		System.out.println("Escribe el nombre del héroe desde el que hay que partir:");
@@ -257,6 +316,15 @@ public class main {
 		}
 	}
 
+	/**
+	 * Algoritmo DFS.
+	 *
+	 * @param gr the gr
+	 * @param v1 the v 1
+	 * @param v2 the v 2
+	 * @param st the st
+	 * @return true, if successful
+	 */
 	public static boolean algoritmoDFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1,
 			Vertex<Heroe<String>> v2, Stack<Edge<Relacion>> st) {
 		boolean noEnd = !v1.equals(v2);
@@ -284,6 +352,11 @@ public class main {
 		return noEnd;
 	}
 
+	/**
+	 * Limpiar grafo.
+	 *
+	 * @param grafo the grafo
+	 */
 	public static void limpiarGrafo(TreeMapGraph<Heroe<String>, Relacion> grafo) {
 		Iterator<Vertex<Heroe<String>>> iterador = grafo.getVertices();
 		Vertex<Heroe<String>> vertice;

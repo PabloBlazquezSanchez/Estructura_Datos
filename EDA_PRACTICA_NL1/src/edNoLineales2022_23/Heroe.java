@@ -4,7 +4,7 @@ import Grafo.Element;
 
 // TODO: Auto-generated Javadoc
 /**
- * Clase donde se implementa el elemento Heroe
+ * Clase donde se implementa el elemento Heroe.
  *
  * @param <E> the element type
  */
@@ -168,6 +168,11 @@ public class Heroe<E> implements Element {
 	public String toString() {
 		return element.toString();
 	}
+	
+	/**
+	 * Gets the nombre heroe.
+	 * @return the nombre heroe
+	 */
 	
 	public String getnombreHeroe() {
 		return nombreHeroe;
