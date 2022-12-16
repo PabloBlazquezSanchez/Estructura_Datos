@@ -344,6 +344,7 @@ public class main {
 			if (r.getElement().getPeso() <= 10) { /* peso de la arista es hasta 10 */
 			w1 = gr.opposite(v1, r);
 			if (!w1.getElement().getVisited()) {
+				//(w1.getElement()).setVisited(true);
 				st.push(w1.getElement());
 				System.out.println(w1.getElement().getnombreHeroe());
 					noEnd = algoritmoDFS(gr, w1, v2, st);
