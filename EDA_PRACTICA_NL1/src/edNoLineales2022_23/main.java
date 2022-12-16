@@ -335,7 +335,7 @@ public class main {
 		boolean noEnd = !v1.equals(v2);
 		Edge<Relacion> r;
 		Iterator<Edge<Relacion>> i;
-		Vertex<Heroe<String>> w1, w2 = v2;
+		Vertex<Heroe<String>> w1;
 
 		v1.getElement().setVisited(true);
 		i = gr.incidentEdges(v1);
@@ -344,17 +344,14 @@ public class main {
 			if (r.getElement().getPeso() <= 10) { /* peso de la arista es hasta 10 */
 			w1 = gr.opposite(v1, r);
 			if (!w1.getElement().getVisited()) {
-				//(w1.getElement()).setVisited(true);
+				(w1.getElement()).setVisited(true);
 				st.push(w1.getElement());
-				
-				
-				//System.out.println(w1.getElement().getnombreHeroe());
+				System.out.println(w1.getElement().getnombreHeroe());
 					noEnd = algoritmoDFS(gr, w1, v2, st);
+					if (noEnd) {st.pop();}
+
 				}
 
-				if (noEnd) {
-					st.pop();
-				}
 			}
 		}
 		return noEnd;

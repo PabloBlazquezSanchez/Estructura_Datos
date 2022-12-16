@@ -16,16 +16,10 @@ public class Heroe<E> implements Element {
 	private String nombreHeroe;
 
 	/**
-	 * Variable entera numInteracciones.
-	 * Esta variable guarda el número de interacciones entre un héroe y otro.
-	 */
-	private int numInteracciones;
-
-	/**
 	 * Variable booleana Visitado.
 	 * Esta variable guarda si se ha visitado el héroe o no.
 	 */
-	private boolean visitado;
+	private boolean visited;
 
 	/**
 	 * Variable de tipo Heroe genérica parent.
@@ -55,7 +49,7 @@ public class Heroe<E> implements Element {
 	public Heroe(String nombreHeroe, E element) {
 		this.element = element;
 		this.nombreHeroe = nombreHeroe;
-		visitado = false;
+		visited = false;
 		parent = null;
 		distancia = 0;
 	}
@@ -87,9 +81,9 @@ public class Heroe<E> implements Element {
 	 * @param visited the new visited
 	 */
 	public void setVisited(boolean visited) {
-		this.visitado = visitado;
+		this.visited = visited;
 	}
-
+	
 	/**
 	 * Este método devuelve el valor almacenado en la variable visitado, que a su vez
 	 * está almacenado en un objeto de tipo Heroe.
@@ -97,7 +91,7 @@ public class Heroe<E> implements Element {
 	 * @return the visited
 	 */
 	public boolean getVisited() {
-		return visitado;
+		return visited;
 	}
 
 	/**
@@ -177,4 +171,6 @@ public class Heroe<E> implements Element {
 	public String getnombreHeroe() {
 		return nombreHeroe;
 	}
+	
+	
 }
