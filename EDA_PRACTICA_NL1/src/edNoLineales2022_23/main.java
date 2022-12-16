@@ -56,11 +56,13 @@ public class main {
 				limpiarGrafo(grafo);
 				ComprobarVerticesDFS(grafo);
 				break;
+			case 4:
+				break;
 			default:
 				System.out.println("Error. Vuelva a escribir la opción otra vez.\n");
 				break;
 			}
-		} while (opcion != /*8*/4);
+		} while (opcion != 4);
 
 	}
 
@@ -247,7 +249,7 @@ public class main {
 		System.out.println("Escribe el nombre del héroe al que hay que llegar:");
 		String b = leer_vertex.nextLine();
 		
-		Stack<Edge<Relacion>> sr = new Stack(), sf = new Stack();
+		Stack<Heroe<String>> sr = new Stack(), sf = new Stack();
 		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a);
 		Vertex<Heroe<String>> vertice_2 = gr.getVertex(b);
 		
@@ -256,19 +258,20 @@ public class main {
 		else {
 			boolean noCaminoExistente = algoritmoDFS(gr, vertice_1, vertice_2, sr);
 			if (!noCaminoExistente) {
-				System.out.println("\nEl equipo que formamos con " + vertice_1.getID() + " y " + vertice_2.getID() + " es:\n");
+				System.out.println("\nEl equipo que formamos con " + vertice_1.getID() + " y " + vertice_2.getID() + " es:");
 				long peso = sr.size();
 				for (int i = 0; i < peso; i++) {
 					sf.push(sr.pop());
 				} // con esto obtenemos el camino (equipo) en orden (de A a B). Igual que BFS
-				
+				System.out.print(vertice_1.getElement().getnombreHeroe());
 				while (!sf.isEmpty()) {
-					Edge<Relacion> paso = sf.pop();
-					System.out.print(paso.getElement().toString() + " - ");
+					Heroe<String> paso = sf.pop();
+					System.out.print(" - "+ paso.getnombreHeroe());
 				}
 			} else
 				System.err.println("No es posible formar un equipo dado a que entre ambos heroes no existe camino.\n");
 		}
+		System.out.println();
 	}
 	
 	/**
@@ -328,7 +331,7 @@ public class main {
 	 * @return true, if successful
 	 */
 	public static boolean algoritmoDFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1,
-			Vertex<Heroe<String>> v2, Stack<Edge<Relacion>> st) {
+			Vertex<Heroe<String>> v2, Stack<Heroe<String>> st) {
 		boolean noEnd = !v1.equals(v2);
 		Edge<Relacion> r;
 		Iterator<Edge<Relacion>> i;
@@ -341,9 +344,9 @@ public class main {
 			if (r.getElement().getPeso() <= 10) { /* peso de la arista es hasta 10 */
 			w1 = gr.opposite(v1, r);
 			if (!w1.getElement().getVisited()) {
-				st.push(r);
-				System.out.println(r.getElement().getPeso() + " \n");
-					noEnd = algoritmoDFS(gr, w2, v2, st);
+				st.push(w1.getElement());
+				System.out.println(w1.getElement().getnombreHeroe());
+					noEnd = algoritmoDFS(gr, w1, v2, st);
 				}
 
 				if (noEnd) {
