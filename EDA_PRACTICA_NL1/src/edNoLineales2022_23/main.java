@@ -201,7 +201,10 @@ public class main {
 
 	/**
 	 * Comprobar vertices.
-	 *
+	 * Este método estático se encarga de comprobar que los héroes (vértices) introducidos por teclado
+	 * existan en el grafo o que alos vértices sean los mismos. Una vez se ha hecho la lectura y la
+	 * comprobación, se procede a llamar al método DFS o BFS y realizar su respectiva impresión, en función
+	 * del valor de una flag de tipo booleana.
 	 * @param gr el grado completo
 	 */
 	public static void ComprobarVertices(Graph<Heroe<String>, Relacion> gr, boolean flag) {
