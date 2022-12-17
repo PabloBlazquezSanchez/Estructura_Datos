@@ -15,19 +15,19 @@ import Grafo.Vertex;
  * The Class main.
  */
 public class main {
-	
+
 	/** The grafo. */
 	static TreeMapGraph<Heroe<String>, Relacion> grafo = new TreeMapGraph<Heroe<String>, Relacion>();
-	
+
 	/**
 	 * The main method.
 	 *
 	 * @param args the arguments
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws IOException           Signals that an I/O exception has occurred.
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	public static void main(String[] args) throws IOException, FileNotFoundException {
-		leerFichero2("marvel-unimodal-edges.csv", grafo);
+		leerFichero("marvel-unimodal-edges.csv", grafo);
 		mostrarMenu();
 	}
 
@@ -45,16 +45,15 @@ public class main {
 			opcion = (int) filtrarEscritura();
 			switch (opcion) {
 			case 1:
-				limpiarGrafo(grafo);
 				mostrarDatos(grafo);
 				break;
 			case 2:
 				limpiarGrafo(grafo);
-				ComprobarVerticesBFS(grafo);
+				ComprobarVertices(grafo, false);
 				break;
 			case 3:
 				limpiarGrafo(grafo);
-				ComprobarVerticesDFS(grafo);
+				ComprobarVertices(grafo, true);
 				break;
 			case 4:
 				break;
@@ -162,12 +161,12 @@ public class main {
 	 * Leer fichero 2.
 	 *
 	 * @param fichero the fichero
-	 * @param grafo the grafo
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @param grafo   the grafo
+	 * @throws IOException           Signals that an I/O exception has occurred.
 	 * @throws FileNotFoundException the file not found exception
 	 */
 	// Método que lee el fichero
-	private static void leerFichero2(String fichero, TreeMapGraph<Heroe<String>, Relacion> grafo)
+	private static void leerFichero(String fichero, TreeMapGraph<Heroe<String>, Relacion> grafo)
 			throws IOException, FileNotFoundException {
 		String origen, objetivo;
 		Integer peso;
@@ -200,80 +199,63 @@ public class main {
 		}
 	}
 
-	/** nota: ya tengo el elemento decorado me salto gran parte del proceso
-	 * Comprobar vertices BFS.
+	/**
+	 * Comprobar vertices DFS.
 	 *
 	 * @param gr the gr
 	 */
-	public static void ComprobarVerticesBFS(Graph<Heroe<String>, Relacion> gr) {
+	public static void ComprobarVertices(Graph<Heroe<String>, Relacion> gr, boolean flag) {
 		Scanner leer_vertex = new Scanner(System.in);
 		System.out.println("Escribe el nombre del héroe desde el que hay que partir:");
 		String a = leer_vertex.nextLine(); // leo toda la linea!!!
 		System.out.println("Escribe el nombre del héroe al que hay que llegar:");
 		String b = leer_vertex.nextLine();
 
-		Stack<Vertex<Heroe<String>>> st = new Stack(), camino = new Stack();
-		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a);
-		Vertex<Heroe<String>> vertice_2 = gr.getVertex(b);
-		
-		if (vertice_1 == null || vertice_2 == null) {
-			System.err.println("Alguno de los héroes introducidos no existen.");
-		}
-		else {
-			//System.out.println("\nPath");
-			System.out.println("\nLa secuencia más corta existente entre " + vertice_1.getID() + " y " + vertice_2.getID() + " es:\n");
-			st = algoritmoBFS(gr, vertice_1, vertice_2);
-			long peso = st.size();
-			// relleno una stack con el recorrido final, invirtiendo la primera
-			System.out.print(gr.getVertex(a).getElement().getnombreHeroe() + " - ");
-			for (int i = 0; i < peso; i++) {
-				camino.push(st.pop());
-			}
-			for (int i = 0; i < peso - 1; i++) {
-				Vertex<Heroe<String>> paso = camino.pop();
-				System.out.print(paso.getElement().getnombreHeroe() + " - ");
-			}
-			Vertex<Heroe<String>> paso_final = camino.pop();
-			System.out.print(paso_final.getElement().getnombreHeroe() + ".\n");
-		}
-	}
-	/**
-	 * Comprobar vertices DFS.
-	 *
-	 * @param gr the gr
-	 */
-	public static void ComprobarVerticesDFS(Graph<Heroe<String>, Relacion> gr) {
-		Scanner leer_vertex = new Scanner(System.in);
-		System.out.println("Escribe el nombre del héroe desde el que hay que partir:");
-		String a = leer_vertex.nextLine(); // leo toda la linea!!!
-		System.out.println("Escribe el nombre del héroe al que hay que llegar:");
-		String b = leer_vertex.nextLine();
-		
 		Stack<Heroe<String>> sr = new Stack(), sf = new Stack();
-		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a);
-		Vertex<Heroe<String>> vertice_2 = gr.getVertex(b);
-		
+		Stack<Vertex<Heroe<String>>> st = new Stack(), camino = new Stack();
+		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a), vertice_2 = gr.getVertex(b);
+
 		if (vertice_1 == null || vertice_2 == null)
 			System.err.println("Los datos introducidos son erróneos.");
 		else {
-			boolean noCaminoExistente = algoritmoDFS(gr, vertice_1, vertice_2, sr);
-			if (!noCaminoExistente) {
-				System.out.println("\nEl equipo que formamos con " + vertice_1.getID() + " y " + vertice_2.getID() + " es:");
-				long peso = sr.size();
+			if (flag) {
+				boolean noCaminoExistente = algoritmoDFS(gr, vertice_1, vertice_2, sr);
+				if (!noCaminoExistente) {
+					System.out.println("\nEl equipo que formamos con " + vertice_1.getID() + " y " + vertice_2.getID()
+							+ " es:");
+					long peso = sr.size();
+					for (int i = 0; i < peso; i++) {
+						sf.push(sr.pop());
+					} // con esto obtenemos el camino (equipo) en orden (de A a B). Igual que BFS
+					System.out.print(vertice_1.getElement().getnombreHeroe());
+					while (!sf.isEmpty()) {
+						Heroe<String> paso = sf.pop();
+						System.out.print(" - " + paso.getnombreHeroe());
+					}
+				} else
+					System.err.println(
+							"No es posible formar un equipo dado a que entre ambos heroes no existe camino.\n");
+			} else {
+				System.out.println("\nLa secuencia más corta existente entre " + vertice_1.getID() + " y "
+						+ vertice_2.getID() + " es:");
+				st = algoritmoBFS(gr, vertice_1, vertice_2);
+				long peso = st.size();
+				// relleno una stack con el recorrido final, invirtiendo la primera
+				System.out.print(gr.getVertex(a).getElement().getnombreHeroe() + " - ");
 				for (int i = 0; i < peso; i++) {
-					sf.push(sr.pop());
-				} // con esto obtenemos el camino (equipo) en orden (de A a B). Igual que BFS
-				System.out.print(vertice_1.getElement().getnombreHeroe());
-				while (!sf.isEmpty()) {
-					Heroe<String> paso = sf.pop();
-					System.out.print(" - "+ paso.getnombreHeroe());
+					camino.push(st.pop());
 				}
-			} else
-				System.err.println("No es posible formar un equipo dado a que entre ambos heroes no existe camino.\n");
+				for (int i = 0; i < peso - 1; i++) {
+					Vertex<Heroe<String>> paso = camino.pop();
+					System.out.print(paso.getElement().getnombreHeroe() + " - ");
+				}
+				Vertex<Heroe<String>> paso_final = camino.pop();
+				System.out.print(paso_final.getElement().getnombreHeroe() + ".\n");
+			}
+			System.out.println();
 		}
-		System.out.println();
 	}
-	
+
 	/**
 	 * Algoritmo BFS.
 	 *
@@ -282,7 +264,7 @@ public class main {
 	 * @param v2 the v 2
 	 * @return the stack
 	 */
-	
+
 	/* Recorrido BFS apartado 2 */
 	public static Stack<Vertex<Heroe<String>>> algoritmoBFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1,
 			Vertex<Heroe<String>> v2/* grafo G y vertices v1 y v2 */) {
@@ -341,12 +323,14 @@ public class main {
 		while (i.hasNext() && noEnd) {
 			r = i.next();
 			if (r.getElement().getPeso() <= 10) { /* peso de la arista es hasta 10 */
-			w1 = gr.opposite(v1, r);
-			if (!w1.getElement().getVisited()) {
-				(w1.getElement()).setVisited(true);
-				st.push(w1.getElement());
+				w1 = gr.opposite(v1, r);
+				if (!w1.getElement().getVisited()) {
+					(w1.getElement()).setVisited(true);
+					st.push(w1.getElement());
 					noEnd = algoritmoDFS(gr, w1, v2, st);
-					if (noEnd) {st.pop();}
+					if (noEnd) {
+						st.pop();
+					}
 
 				}
 
