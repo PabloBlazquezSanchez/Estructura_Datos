@@ -200,9 +200,9 @@ public class main {
 	}
 
 	/**
-	 * Comprobar vertices DFS.
+	 * Comprobar vertices.
 	 *
-	 * @param gr the gr
+	 * @param gr el grado completo
 	 */
 	public static void ComprobarVertices(Graph<Heroe<String>, Relacion> gr, boolean flag) {
 		Scanner leer_vertex = new Scanner(System.in);
@@ -304,12 +304,18 @@ public class main {
 
 	/**
 	 * Algoritmo DFS.
-	 *
-	 * @param gr the gr
-	 * @param v1 the v 1
-	 * @param v2 the v 2
-	 * @param st the st
-	 * @return true, if successful
+	 * 
+	 * Este método booleano es la implementación de un recorrido en profundidad, que se encarga de ir marcando el vértice de inicio
+	 * como visitado y guardar en el iterador las aristas incidentes en dicha esquina. Entonces, mientras que haya un siguiente y la variable
+	 * booleana de terminación esté en true (ya que marca si NO ha terminado) vamos almacenando una arista incidente y comprobamos que su
+	 * peso es de hasta 10. Si cumple la condición, declaramos el vértice opuesto w1, y miramos si ya se visitó, ya que de ser así, no llamamos
+	 * al método recursivo y no lo guardamos en la pila st; no nos sirve. Si el resultado del método recursivo es true, sacamos de la pila w1.
+	 * La llamda recursiva se hace con w1 y no con v1.
+	 * @param gr el grafo
+	 * @param v1 el primer vértice o héroe (punto de partida)
+	 * @param v2 segundo vértice o héroe (destino)
+	 * @param st pila donde se almacenan cada uno de los héroes que conforman el recorrido
+	 * @return noEnd
 	 */
 	public static boolean algoritmoDFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1,
 			Vertex<Heroe<String>> v2, Stack<Heroe<String>> st) {
@@ -322,7 +328,7 @@ public class main {
 		i = gr.incidentEdges(v1);
 		while (i.hasNext() && noEnd) {
 			r = i.next();
-			if (r.getElement().getPeso() <= 10) { /* peso de la arista es hasta 10 */
+			if (r.getElement().getPeso() <= 10) {
 				w1 = gr.opposite(v1, r);
 				if (!w1.getElement().getVisited()) {
 					(w1.getElement()).setVisited(true);
