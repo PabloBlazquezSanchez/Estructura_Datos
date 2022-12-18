@@ -63,6 +63,7 @@ public class Heroe<E> implements Element {
 	public String getID() {
 		return nombreHeroe.toString();
 	}
+	
 
 	/**
 	 * Este método modifica el valor almacenado en la variable nombreHeroe, que a su
@@ -74,6 +75,14 @@ public class Heroe<E> implements Element {
 		this.nombreHeroe = nombre;
 	}
 
+	/**
+	 * Gets the nombre heroe.
+	 * @return the nombre heroe
+	 */
+	
+	public String getnombreHeroe() {
+		return nombreHeroe;
+	}
 	/**
 	 * Este método modifica el valor almacenado en la variable visitado, que a su
 	 * vez está almacenado en un objeto de tipo Heroe.
@@ -163,14 +172,7 @@ public class Heroe<E> implements Element {
 		return element.toString();
 	}
 	
-	/**
-	 * Gets the nombre heroe.
-	 * @return the nombre heroe
-	 */
-	
-	public String getnombreHeroe() {
-		return nombreHeroe;
-	}
+
 	
 	
 }

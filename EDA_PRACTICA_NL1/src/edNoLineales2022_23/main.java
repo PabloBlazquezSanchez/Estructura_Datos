@@ -218,8 +218,11 @@ public class main {
 		Stack<Vertex<Heroe<String>>> st = new Stack(), camino = new Stack();
 		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a), vertice_2 = gr.getVertex(b);
 
-		if (vertice_1 == null || vertice_2 == null)
-			System.err.println("Los datos introducidos son erróneos.");
+		if (vertice_1 == null || vertice_2 == null) {
+			System.err.println("Los datos introducidos son erróneos.");}
+		else if(vertice_1.equals(vertice_2)) {
+			System.err.println("No introduzcas dos veces el mismo héroe.");
+		}
 		else {
 			if (flag) {
 				boolean noCaminoExistente = algoritmoDFS(gr, vertice_1, vertice_2, sr);
