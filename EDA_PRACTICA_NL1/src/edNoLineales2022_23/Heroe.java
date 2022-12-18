@@ -76,7 +76,9 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * Gets the nombre heroe.
+	 * Este método devuelve el valor almacenado en la variable nombreHeroe, que a su vez
+	 * está almacenado en un objeto de tipo Heroe.
+	 * 
 	 * @return the nombre heroe
 	 */
 	
@@ -164,7 +166,8 @@ public class Heroe<E> implements Element {
 	}
 
 	/**
-	 * To string.
+	 * El método toString imprime el valor de todas las variables contenida
+	 * en un objeto de tipo Heroe en una sola cadena de texto.
 	 *
 	 * @return the string
 	 */

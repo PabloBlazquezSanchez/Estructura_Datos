@@ -20,7 +20,7 @@ public class main {
 	static TreeMapGraph<Heroe<String>, Relacion> grafo = new TreeMapGraph<Heroe<String>, Relacion>();
 
 	/**
-	 * The main method.
+	 * El método principal donde se va a llamar al menú.
 	 *
 	 * @param args the arguments
 	 * @throws IOException           Signals that an I/O exception has occurred.
@@ -32,7 +32,9 @@ public class main {
 	}
 
 	/**
-	 * Mostrar menu.
+	 * Este método muestra por pantalla un menú con distintas opciones para realizar
+	 * una acción.
+	 * 
 	 */
 	public static void mostrarMenu() {
 		int opcion = 0;
@@ -67,8 +69,18 @@ public class main {
 
 	/**
 	 * Mostrar datos.
+	 * 
+	 * Este método estático es un conteo de estadísticas en el que se mostrará el
+	 * total de personajes almacenados en el grafo, el número de relaciones totales
+	 * entre ellos, el personaje más sociable y el menos sociable, teniendo en
+	 * cuenta el grado de los vértices. Éste se calcula a través de un iterador que
+	 * permite obtener el número total de vértices e irá comprobando que mientras
+	 * exista un siguiente elemento, se procede a calcular el grado de vértice. En
+	 * función de su valor, a través de condicionales, determina si este será el que
+	 * más trabaje en equipo (más asociaciones con otros vértices) y el que menos
+	 * (menos asociaciones con otros vértices).
 	 *
-	 * @param grafo the grafo
+	 * @param grafo el grafo
 	 */
 	private static void mostrarDatos(TreeMapGraph<Heroe<String>, Relacion> grafo) {
 		System.out.println(
@@ -121,10 +133,16 @@ public class main {
 
 	/**
 	 * Grado.
+	 * 
+	 * Este método estático se encarga de obtener el grado de un vértice a través de
+	 * un iterador que obtiene las aristas incidentes al vérice que se ha pasado
+	 * como parámetro. Por cada siguiente elemento existente que haya en el
+	 * iterador, una variable entera declarada localmente incrementa en una unidad.
+	 * Cuando el cálculo termina se devuelve este entero no negativo.
 	 *
-	 * @param g the g
-	 * @param v the v
-	 * @return the int
+	 * @param g el grafo
+	 * @param v el vértice
+	 * @return el entero que almacena el grado
 	 */
 	public static int grado(Graph<Heroe<String>, Relacion> g, Vertex<Heroe<String>> v) {
 		Iterator<Edge<Relacion>> iterador;
@@ -139,9 +157,14 @@ public class main {
 
 	// Método que captura el dato introducido por teclado y comprueba si es un
 	/**
-	 * Filtrar escritura.
+	 * Para evitar que al introducir un número se introduzca un carácter no deseado,
+	 * se ha diseñado un pequeño método recursivo que detecta, a través de la
+	 * excepción incluida en la API de Java "Input Mismatch Exception", si el
+	 * carácter escrito por teclado no es un número. De ser así, se lanza el mensaje
+	 * de error y se vuelve a pedir el número, llamando a la función recursiva. El
+	 * ciclo acaba cuando se introduce un número, el cual se devolverá.
 	 *
-	 * @return the long
+	 * @return el long
 	 */
 	// número o un carácter
 	public static long filtrarEscritura() {
@@ -158,10 +181,17 @@ public class main {
 	}
 
 	/**
-	 * Leer fichero 2.
+	 * Leer fichero.
+	 * 
+	 * Este método se encarga de recorrer el fichero el cual se pasa como parámetro
+	 * en la llamada. Una función característica del método es que va a detectar si
+	 * el fichero se encuentra en el directorio. En caso afirmativo procederá a
+	 * recorrerlo. En caso contrario saltará una excepción en la que notificará que
+	 * el fichero no se encuentra en el directorio de búsqueda y finalizará el
+	 * programa.
 	 *
-	 * @param fichero the fichero
-	 * @param grafo   the grafo
+	 * @param fichero el fichero
+	 * @param grafo   el grafo
 	 * @throws IOException           Signals that an I/O exception has occurred.
 	 * @throws FileNotFoundException the file not found exception
 	 */
@@ -201,11 +231,14 @@ public class main {
 
 	/**
 	 * Comprobar vertices.
-	 * Este método estático se encarga de comprobar que los héroes (vértices) introducidos por teclado
-	 * existan en el grafo o que alos vértices sean los mismos. Una vez se ha hecho la lectura y la
-	 * comprobación, se procede a llamar al método DFS o BFS y realizar su respectiva impresión, en función
-	 * del valor de una flag de tipo booleana.
-	 * @param gr el grado completo
+	 * 
+	 * Este método estático se encarga de comprobar que los héroes (vértices)
+	 * introducidos por teclado existan en el grafo o que los vértices sean los
+	 * mismos. Una vez se ha hecho la lectura y la comprobación, se procede a llamar
+	 * al método DFS o BFS y realizar su respectiva impresión, en función del valor
+	 * de una flag de tipo booleana.
+	 * 
+	 * @param gr el grafo
 	 */
 	public static void ComprobarVertices(Graph<Heroe<String>, Relacion> gr, boolean flag) {
 		Scanner leer_vertex = new Scanner(System.in);
@@ -219,16 +252,15 @@ public class main {
 		Vertex<Heroe<String>> vertice_1 = gr.getVertex(a), vertice_2 = gr.getVertex(b);
 
 		if (vertice_1 == null || vertice_2 == null) {
-			System.err.println("Los datos introducidos son erróneos.");}
-		else if(vertice_1.equals(vertice_2)) {
+			System.err.println("Los datos introducidos son erróneos.");
+		} else if (vertice_1.equals(vertice_2)) {
 			System.err.println("No introduzcas dos veces el mismo héroe.");
-		}
-		else {
+		} else {
 			if (flag) {
 				boolean noCaminoExistente = algoritmoDFS(gr, vertice_1, vertice_2, sr);
 				if (!noCaminoExistente) {
-					System.out.println("\nEl equipo que formamos con " + vertice_1.getID() + " y " + vertice_2.getID()
-							+ " es:");
+					System.out.println(
+							"\nEl equipo que formamos con " + vertice_1.getID() + " y " + vertice_2.getID() + " es:");
 					long peso = sr.size();
 					for (int i = 0; i < peso; i++) {
 						sf.push(sr.pop());
@@ -264,11 +296,24 @@ public class main {
 
 	/**
 	 * Algoritmo BFS.
+	 * 
+	 * Este método se encarga de tomar la arista de llegada y la introduce en la
+	 * pila. Siempre y cuando la pila no esté vacía y el recorrido no haya terminado
+	 * (marcado por una vaiable booleana) un vértice auxiliar tomará el valor de
+	 * sacar el último vértice de la pila y un iterador tomará el valor de sus
+	 * aristas incidentes. Mientras que el iterador marque que existe un siguiente
+	 * elemento y el recorrido no ha terminado una arista arbitraria r tomará el
+	 * valor del iterador de manera que podamos obtener el vértice opuesto para
+	 * nuestro primer vértice auxiliar. Si este nuevo vértice (w2) no ha sido
+	 * visitado, lo marcamos como visitado y padre de w1. También declaramos su
+	 * distancia como la de w1+1. Con esto introducimos w2 en la pila y comprobamos
+	 * si es igual a v2. En caso afirmativo cambia el valor de notermina a false por
+	 * lo que acaba el método.
 	 *
-	 * @param gr the gr
-	 * @param v1 the v 1
-	 * @param v2 the v 2
-	 * @return the stack
+	 * @param gr el grafo
+	 * @param v1 el vértice de partida
+	 * @param v2 el vértice de llegada
+	 * @return la pila con todo el recorrido de héroes
 	 */
 
 	/* Recorrido BFS apartado 2 */
@@ -311,16 +356,22 @@ public class main {
 	/**
 	 * Algoritmo DFS.
 	 * 
-	 * Este método booleano es la implementación de un recorrido en profundidad, que se encarga de ir marcando el vértice de inicio
-	 * como visitado y guardar en el iterador las aristas incidentes en dicha esquina. Entonces, mientras que haya un siguiente y la variable
-	 * booleana de terminación esté en true (ya que marca si NO ha terminado) vamos almacenando una arista incidente y comprobamos que su
-	 * peso es de hasta 10. Si cumple la condición, declaramos el vértice opuesto w1, y miramos si ya se visitó, ya que de ser así, no llamamos
-	 * al método recursivo y no lo guardamos en la pila st; no nos sirve. Si el resultado del método recursivo es true, sacamos de la pila w1.
-	 * La llamda recursiva se hace con w1 y no con v1.
+	 * Este método booleano es la implementación de un recorrido en profundidad, que
+	 * se encarga de ir marcando el vértice de inicio como visitado y guardar en el
+	 * iterador las aristas incidentes en dicha esquina. Entonces, mientras que haya
+	 * un siguiente y la variable booleana de terminación esté en true (ya que marca
+	 * si NO ha terminado) vamos almacenando una arista incidente y comprobamos que
+	 * su peso es de hasta 10. Si cumple la condición, declaramos el vértice opuesto
+	 * w1, y miramos si ya se visitó, ya que de ser así, no llamamos al método
+	 * recursivo y no lo guardamos en la pila st; no nos sirve. Si el resultado del
+	 * método recursivo es true, sacamos de la pila w1. La llamda recursiva se hace
+	 * con w1 y no con v1.
+	 * 
 	 * @param gr el grafo
 	 * @param v1 el primer vértice o héroe (punto de partida)
 	 * @param v2 segundo vértice o héroe (destino)
-	 * @param st pila donde se almacenan cada uno de los héroes que conforman el recorrido
+	 * @param st pila donde se almacenan cada uno de los héroes que conforman el
+	 *           recorrido
 	 * @return noEnd
 	 */
 	public static boolean algoritmoDFS(Graph<Heroe<String>, Relacion> gr, Vertex<Heroe<String>> v1,
@@ -353,6 +404,10 @@ public class main {
 
 	/**
 	 * Limpiar grafo.
+	 * 
+	 * Este método se va a encargar de cambiar el estado de visitado de los vértices
+	 * a "No visitado" para que el programa pueda volver a pasar por esos vértices
+	 * en caso de buscar el camino más corto entre otros vértices.
 	 *
 	 * @param grafo the grafo
 	 */
