@@ -16,7 +16,7 @@ public class Heroe<E> implements Element {
 	private String nombreHeroe;
 
 	/**
-	 * Variable booleana Visitado.
+	 * Variable booleana visited.
 	 * Esta variable guarda si se ha visitado el héroe o no.
 	 */
 	private boolean visited;
